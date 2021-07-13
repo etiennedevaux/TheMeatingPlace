@@ -28,8 +28,8 @@ def get_recipes():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
-    return render_template("tasks.html", tasks=tasks)
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipes=recipes)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -106,51 +106,51 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_task", methods=["GET", "POST"])
-def add_task():
+@app.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"
-        task = {
+        recipe = {
             "category_name": request.form.get("category_name"),
-            "task_name": request.form.get("task_name"),
-            "task_description": request.form.get("task_description"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
             "is_urgent": is_urgent,
-            "due_date": request.form.get("due_date"),
+            "upload_date": request.form.get("due_date"),
             "created_by": session["user"]
         }
-        mongo.db.tasks.insert_one(task)
-        flash("Task Successfully Added")
-        return redirect(url_for("get_tasks"))
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("get_recipes"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_task.html", categories=categories)
+    return render_template("add_recipe.html", categories=categories)
 
 
-@app.route("/edit_task/<task_id>", methods=["GET", "POST"])
-def edit_task(task_id):
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
-            "task_name": request.form.get("task_name"),
-            "task_description": request.form.get("task_description"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
             "is_urgent": is_urgent,
-            "due_date": request.form.get("due_date"),
+            "upload_date": request.form.get("upload_date"),
             "created_by": session["user"]
         }
-        mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
-        flash("Task Successfully Updated")
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        flash("Recipe Successfully Updated")
 
-    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_task.html", task=task, categories=categories)
+    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
 
-@app.route("/delete_task/<task_id>")
-def delete_task(task_id):
-    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
-    flash("Task Successfully Deleted")
-    return redirect(url_for("get_tasks"))
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe Successfully Deleted")
+    return redirect(url_for("get_recipes"))
 
 
 @app.route("/get_categories")
