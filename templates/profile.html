@@ -5,8 +5,9 @@
         <div class="col s12 m8 offset-m2">
             <div class="card-panel">
                 <h3 class="center-align light-blue-text text-darken-4">
-                    {{ username }}'s Profile
+                    Profile for {{ userprofile.given_name }} {{userprofile.family_name}}
                 </h3>
+                <img src="{{userprofile.profile_image}}">
             </div>
         </div>
     </div>

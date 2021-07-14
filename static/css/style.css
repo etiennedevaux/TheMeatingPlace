@@ -20,3 +20,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.meat-heading {
+    background-color: #fff
+}
+
+.card-panel img{
+    width: 100%;
+}
