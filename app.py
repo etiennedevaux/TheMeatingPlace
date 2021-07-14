@@ -2,7 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
-from flask_pymongo import PyMongo
+from flask_pymongo import DESCENDING, PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -21,14 +21,14 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = list(mongo.db.recipes.find())
+    recipes = list(mongo.db.recipes.find({"upload_date":{"$ne": None}}))
     return render_template("recipes.html", recipes=recipes)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}).sort("upload_date", DESCENDING))
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -115,7 +115,7 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "is_urgent": is_urgent,
-            "upload_date": request.form.get("due_date"),
+            "upload_date": request.form.get("upload_date"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)

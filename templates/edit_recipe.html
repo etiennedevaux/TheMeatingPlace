@@ -42,12 +42,12 @@
                     <label for="recipe_description">Recipe Description</label>
                 </div>
             </div>
-            <!-- due date picker -->
+            <!-- upload date picker -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="due_date" name="due_date" type="text"
-                        value="{{ recipe.upload_date }}" class="datepicker validate" required>
+                    <input id="upload_date" name="upload_date" type="date"
+                        value="{{ recipe.upload_date }}" class="validate" required>
                     <label for="upload_date">Due Date</label>
                 </div>
             </div>

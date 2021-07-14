@@ -14,3 +14,9 @@
     margin: 5px;
     line-height: 42px;
 }
+
+body {
+    background-image: url("../images/food_range_001.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
