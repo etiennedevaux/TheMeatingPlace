@@ -28,3 +28,16 @@ body {
 .card-panel img{
     width: 100%;
 }
+
+.profile-thumbnail {
+    width: 100%;
+}
+
+/* Recipes */
+.recipe-row {
+    margin-bottom: 0;
+}
+
+.collapsible-body {
+    background-color: #039be5ee;
+}

@@ -17,11 +17,19 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+categories = mongo.db.categories.find().sort("sequence", 1)
+recipes = list(mongo.db.recipes.find({"upload_date":{"$ne": None}}))
+
+for recipe in recipes:
+    recipe['family_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["family_name"]
+    recipe['given_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["given_name"]
+    recipe['profile_image']=mongo.db.users.find_one({"username": recipe["created_by"]})["profile_image"]
+
 
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = list(mongo.db.recipes.find({"upload_date":{"$ne": None}}))
+
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -29,6 +37,10 @@ def get_recipes():
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}).sort("upload_date", DESCENDING))
+    
+    for recipe in recipes:
+        recipes.append({"fullname":"Me"})
+
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -122,7 +134,7 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
+    categories = mongo.db.categories.find().sort("sequence")
     return render_template("add_recipe.html", categories=categories)
 
 
@@ -142,7 +154,7 @@ def edit_recipe(recipe_id):
         flash("Recipe Successfully Updated")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
+    
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
 
