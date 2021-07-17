@@ -1,3 +1,4 @@
+from datetime import datetime
 import os
 from flask import (
     Flask, flash, render_template,
@@ -18,7 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 categories = mongo.db.categories.find().sort("sequence", 1)
-recipes = list(mongo.db.recipes.find({"upload_date":{"$ne": None}}))
+recipes = list(mongo.db.recipes.find({"upload_date":{"$ne": None}}).sort("upload_date", -1))
 
 for recipe in recipes:
     recipe['family_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["family_name"]
@@ -36,11 +37,6 @@ def get_recipes():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}).sort("upload_date", DESCENDING))
-    
-    for recipe in recipes:
-        recipes.append({"fullname":"Me"})
-
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -127,7 +123,7 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "is_urgent": is_urgent,
-            "upload_date": request.form.get("upload_date"),
+            "upload_date": datetime.today().format('YYYY-MM-DD'),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
