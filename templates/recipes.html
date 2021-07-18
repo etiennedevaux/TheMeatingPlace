@@ -7,22 +7,25 @@
     <ul class="collapsible">
         {% for recipe in recipes  %}
         <li>
+            <div class="row recipe-row">
             <div class="collapsible-header white-text light-blue darken-4 text-shadow">
-                <div class="col s3">
+                <div class="col-2 s3 mpl-recipe-col-a">
                     <i class="fas fa-caret-down"></i>
                     {% if session.user|lower == recipe.created_by|lower %}
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                     {% endif %}
                    
                 </div>
-                <div class="row recipe-row">
-                    <div class="col-3">
-                    <strong>{{ recipe.recipe_name }}</strong>
+
+                    <div class="col-3 mpl-recipe-col-b">
+                        <h1>{{ recipe.recipe_name }}</h1>
+                        <h2>{{ recipe.category_name }}</h2>
+                        <p>Created by {{ recipe.given_name }} {{ recipe.family_name }}</p>
                     </div>
-                    <div class="col-7">
-                        {{ recipe.category_name }}  created by {{ recipe.given_name }} {{ recipe.family_name }}
+                    <div class="col-5 mpl-recipe-col-c">
+                        <p>{{ recipe.recipe_description }}</p>
                     </div>
-                    <div class="col-2 img-box">
+                    <div class="col-2  mpl-recipe-col-d">
                         <img class="profile-thumbnail" src="{{ recipe.profile_image }}">
                     </div>
                 </div>

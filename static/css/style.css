@@ -45,6 +45,37 @@ body {
     background-color: #039be5ee;
 }
 
-.img-box {
-   
+.collapsible-header {
+    width: 100%;
 }
+
+
+.mpl-recipe-col-a {
+    padding: 0;
+    margin: 0;
+}
+
+.mpl-recipe-col-b {
+    padding: 0;
+    margin: 0;
+}
+
+.mpl-recipe-col-b h1{
+    margin: 0;
+    font-size: 16pt;
+}
+
+.mpl-recipe-col-b h2{
+    font-variant: small-caps;
+    font-size: 14pt;
+    margin: 10px 0 5px 0;
+    font-weight:500;
+    text-shadow: 2px 2px #0000ff;
+}
+
+
+
+.mpl-recipe-col-c {}
+
+.mpl-recipe-col-d {}
+/* End of Recipes */
