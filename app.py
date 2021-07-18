@@ -53,7 +53,10 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "family_name": request.form.get("family-name"),
+            "given_name": request.form.get("given-name"),
+            "profile_image": request.form.get("profile-image")
         }
         mongo.db.users.insert_one(register)
 
@@ -123,7 +126,7 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "is_urgent": is_urgent,
-            "upload_date": datetime.today().format('YYYY-MM-DD'),
+            "upload_date": datetime.today().strftime("%Y-%m-%d"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
