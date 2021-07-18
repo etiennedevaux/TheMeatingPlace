@@ -35,7 +35,8 @@ body {
     object-fit: cover;
     max-width: 500px;
     margin: auto;
-    opacity: 0.8;
+    opacity: 0.7;
+    border-radius: 3px;
 }
 
 /* Recipes */
@@ -65,6 +66,7 @@ body {
 .mpl-recipe-col-b h1{
     margin: 0;
     font-size: 18pt;
+    color: #f4ff55;
 }
 
 .mpl-recipe-col-b h2{

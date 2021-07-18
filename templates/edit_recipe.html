@@ -42,32 +42,8 @@
                     <label for="recipe_description">Recipe Description</label>
                 </div>
             </div>
-            <!-- upload date picker -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="upload_date" name="upload_date" type="date"
-                        value="{{ recipe.upload_date }}" class="validate" required>
-                    <label for="upload_date">Upload Date</label>
-                </div>
-            </div>
-            <!-- is urgent toggle -->
-			<div class="row">
-				<div class="input-field col s12">
-					<div class="switch">
-                        <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
-						<label for="is_urgent">
-                            {% if recipe.is_urgent == "on" %}
-                                <input type="checkbox" id="is_urgent" name="is_urgent" checked>
-                            {% else %}
-                                <input type="checkbox" id="is_urgent" name="is_urgent">
-                            {% endif %}
-                            <span class="lever"></span>
-                            Is Urgent
-                        </label>
-					</div>
-				</div>
-			</div>
+            <!-- End of Recipe Description -->
+            
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">

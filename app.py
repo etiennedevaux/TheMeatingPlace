@@ -125,7 +125,6 @@ def add_recipe():
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
-            "is_urgent": is_urgent,
             "upload_date": datetime.today().strftime("%Y-%m-%d"),
             "created_by": session["user"]
         }
@@ -140,13 +139,11 @@ def add_recipe():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-        is_urgent = "on" if request.form.get("is_urgent") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
-            "is_urgent": is_urgent,
-            "upload_date": request.form.get("upload_date"),
+            "upload_date": datetime.today().strftime("%Y-%m-%d"),
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
