@@ -18,27 +18,32 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-categories = mongo.db.categories.find().sort("sequence", 1)
-recipes = list(mongo.db.recipes.find({"upload_date":{"$ne": None}}).sort("upload_date", -1))
+def data_refresh():
+    global categories, recipes
+    categories = mongo.db.categories.find().sort("sequence", 1)
+    recipes = list(mongo.db.recipes.find({"upload_date":{"$ne": None}}).sort("upload_date", -1))
 
-for recipe in recipes:
-    recipe['family_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["family_name"]
-    recipe['given_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["given_name"]
-    recipe['profile_image']=mongo.db.users.find_one({"username": recipe["created_by"]})["profile_image"]
+    for recipe in recipes:
+        recipe['family_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["family_name"]
+        recipe['given_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["given_name"]
+        recipe['profile_image']=mongo.db.users.find_one({"username": recipe["created_by"]})["profile_image"]
+    
+
+
+
+
 
 
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-
+    data_refresh()
     return render_template("recipes.html", recipes=recipes)
-
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     return render_template("recipes.html", recipes=recipes)
-
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -119,12 +124,14 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    categories = mongo.db.categories.find().sort("sequence")
     if request.method == "POST":
-        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        
         recipe = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
             "upload_date": datetime.today().strftime("%Y-%m-%d"),
             "created_by": session["user"]
         }
@@ -132,23 +139,28 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
 
-    categories = mongo.db.categories.find().sort("sequence")
+
     return render_template("add_recipe.html", categories=categories)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    data_refresh()
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_image": request.form.get("recipe_image"),
             "upload_date": datetime.today().strftime("%Y-%m-%d"),
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
-
+        data_refresh()
+        return render_template("recipes.html", recipes=recipes, categories=categories)
+        
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
@@ -182,6 +194,7 @@ def add_category():
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+    data_refresh()
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name")
@@ -205,3 +218,4 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+

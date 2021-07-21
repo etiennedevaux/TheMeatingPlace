@@ -36,7 +36,7 @@ body {
     max-width: 500px;
     margin: auto;
     opacity: 0.7;
-    border-radius: 3px;
+    border-radius: 10%;
 }
 
 /* Recipes */
@@ -100,5 +100,31 @@ body {
 .mpl-recipe-image-overlay{
     position: absolute;
     top: 0;
+}
+
+.collapsible-body h1 {
+    margin: 0;
+    font-size: 12pt;
+}
+
+.mpl-recipe-ingredients {
+    height: 200px;
+}
+
+.mpl-recipe-edit{
+    z-index: 5;
+}
+
+#mpl-recipe-update a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+}
+
+#mpl-recipe-update a:hover{
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
 }
 /* End of Recipes */

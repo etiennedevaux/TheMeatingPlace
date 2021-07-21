@@ -5,7 +5,8 @@
 
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-            <!-- category selection -->
+            
+            <!-- Recipe Category -->
 			<div class="row">
 				<div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
@@ -22,6 +23,8 @@
 					<label for="category_name">Recipe Category</label>
 				</div>
 			</div>
+            <!-- End of Recipe Category -->
+            
             <!-- recipe name -->
             <div class="row">
                 <div class="input-field col s12">
@@ -31,6 +34,7 @@
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
+            
             <!-- recipe description -->
             <div class="row">
                 <div class="input-field col s12">
@@ -43,6 +47,28 @@
                 </div>
             </div>
             <!-- End of Recipe Description -->
+
+            <!-- Recipe Ingredients -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" maxlength="200" class="materialize-textarea validate">{{ recipe.recipe_ingredients }}</textarea>
+                    <label for="recipe_ingredients">Ingredients</label>
+                </div>
+            </div>
+            <!-- End of Recipe Ingredients-->
+            
+            <!-- Recipe Image -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="recipe_image" name="recipe_image" maxlength="200" class="materialize-textarea validate">
+                        {{- recipe.recipe_image -}}
+                    </textarea>
+                    <label for="recipe_image">Recipe Image</label>
+                </div>
+            </div>
+            <!-- End of Recipe Image -->
             
             <!-- submit button -->
             <div class="row">
@@ -51,9 +77,11 @@
                     <a href="{{ url_for('get_recipes') }}" class="btn-large red text-shadow">
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Edit Recipe <i class="fas fa-edit right"></i>
+                    
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow" id="mpl-recipe-update">
+                        Update Recipe <i class="fas fa-edit right"></i>
                     </button>
+                  
                 </div>
             </div>
         </form>

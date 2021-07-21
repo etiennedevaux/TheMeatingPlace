@@ -29,13 +29,35 @@
             </div>
             <!-- End of Recipe Name -->
             
-            <!-- task description -->
+            <!-- Recipe Description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
                     <textarea id="recipe_description" name="recipe_description" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required></textarea>
                     <label for="recipe_description">Recipe Description</label>
+                </div>
+            </div>
+            <!-- End of Recipe Description-->
+
+            <!-- Recipe Ingredients -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" maxlength="200" class="materialize-textarea validate"></textarea>
+                    <label for="recipe_ingredients">Ingredients</label>
+                </div>
+            </div>
+            <!-- End of Recipe Ingredients-->
+
+            <!-- Recipe Image -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="recipe_image" name="recipe_image" maxlength="200" class="materialize-textarea validate">
+                        {{- recipe.recipe_image -}}
+                    </textarea>
+                    <label for="recipe_image">Recipe Image</label>
                 </div>
             </div>
             
