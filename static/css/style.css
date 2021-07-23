@@ -1,4 +1,20 @@
-.text-shadow {
+/* Start of Navigation */
+nav{
+    background-color: #762b32dd;
+}
+
+.mpl-nav-heading {
+    font-family: "Bradley Hand ITC", sans-serif;
+    letter-spacing: 5px;
+    text-shadow: 5px 3px #461b22;
+    text-decoration: wavy;
+    font-size: 28pt;
+    margin-left: 20px;
+}
+
+/* End of Navigation */
+
+.collapsible-body{
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -128,3 +144,19 @@ body {
     font-weight: 700;
 }
 /* End of Recipes */
+
+/* Start of Profiles */
+
+.mpl-profile-main{
+    width: 80%;
+}
+
+.card-panel {
+    width: 50%;
+}
+
+.mpl-edituser-card {
+    width: 80%;
+}
+
+/* End of Profiles */

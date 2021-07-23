@@ -61,6 +61,7 @@ def register():
             "password": generate_password_hash(request.form.get("password")),
             "family_name": request.form.get("family-name"),
             "given_name": request.form.get("given-name"),
+            "about_me": request.form.get("about_me"),
             "profile_image": request.form.get("profile-image")
         }
         mongo.db.users.insert_one(register)
@@ -132,6 +133,7 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_equipment": request.form.get("recipe_equipment"),
             "upload_date": datetime.today().strftime("%Y-%m-%d"),
             "created_by": session["user"]
         }
@@ -152,6 +154,8 @@ def edit_recipe(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_equipment": request.form.get("recipe_equipment"),
+            "recipe_instructions": request.form.get("recipe_instructions"),
             "recipe_image": request.form.get("recipe_image"),
             "upload_date": datetime.today().strftime("%Y-%m-%d"),
             "created_by": session["user"]
@@ -165,7 +169,15 @@ def edit_recipe(recipe_id):
     
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
+@app.route("/edit_user/",  methods=["GET", "POST"])
+def edit_user():
 
+    # grab the session user's username from db
+    userprofile = mongo.db.users.find_one({"username": session["user"]})
+        
+    return render_template("edit_user.html", userprofile=userprofile)
+        
+ 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.recipes.remove({"_id": ObjectId(recipe_id)})

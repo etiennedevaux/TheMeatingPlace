@@ -6,7 +6,7 @@
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel">
-                <!-- username -->
+                <!-- Start of Username -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
@@ -15,7 +15,9 @@
 						<label for="username">Username</label>
 					</div>
                 </div>
-                <!-- passowrd -->
+                <!-- End of Username -->
+
+                <!-- Start of Password -->
                 <div class="row">
                     <div class="input-field col s12">
 						<i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
@@ -24,6 +26,7 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
+                <!-- End of Password -->
 
                 <!-- Given Name -->
                 <div class="row">
@@ -44,6 +47,16 @@
 					</div>
                 </div>
                 <!-- End of Family Name-->
+
+                <!-- Start of About Me -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+						<input id="about-me" name="about-me" type="text">
+						<label for="about-me">About Me</label>
+					</div>
+                </div>
+                <!-- End of About Me-->
 
                 <!-- Profile Image -->
                 <div class="row">
