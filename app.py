@@ -68,7 +68,7 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("Registration Successful")
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
@@ -86,10 +86,8 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for(
-                            "profile", username=session["user"]))
+                        flash("Welcome " + existing_user['given_name'])
+                        return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -97,7 +95,7 @@ def login():
 
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect Username")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -125,7 +123,7 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    categories = mongo.db.categories.find().sort("sequence")
+    data_refresh()
     if request.method == "POST":
         
         recipe = {
@@ -138,6 +136,7 @@ def add_recipe():
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
+        data_refresh()
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
 
@@ -169,13 +168,28 @@ def edit_recipe(recipe_id):
     
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
-@app.route("/edit_user/",  methods=["GET", "POST"])
-def edit_user():
+@app.route("/edit_user/<user_id>",  methods=["GET", "POST"])
+def edit_user(user_id):
 
     # grab the session user's username from db
     userprofile = mongo.db.users.find_one({"username": session["user"]})
+    print(userprofile["username"])
+    data_refresh()
+    if request.method == "POST":
+        submit = {
+            "given_name": request.form.get("given_name"),
+            "family_name": request.form.get("family_name"),
+            "about_me": request.form.get("about_me"),
+            "password": userprofile["password"],
+            "profile_image": request.form.get("profile_image"),
+            "username": session["user"]
+        }
+        mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
+        flash("Recipe Successfully Updated")
+        data_refresh()
+        return render_template("recipes.html", recipes=recipes, categories=categories)
         
-    return render_template("edit_user.html", userprofile=userprofile)
+    return render_template("edit_user.html", username=user_id, userprofile=userprofile)
         
  
 @app.route("/delete_recipe/<recipe_id>")

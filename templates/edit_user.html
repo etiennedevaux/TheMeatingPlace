@@ -1,97 +1,65 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3 class="light-blue-text text-darken-4 center-align">Edit User Profile</h3>
+    <h3 class="light-blue-text text-darken-4 center-align mpl-heading">Edit User Profile</h3>
     <div class="row card-panel grey lighten-5 mpl-edituser-card">
         <form class="col s12" method="POST" action="{{ url_for('edit_user', user_id=userprofile._id) }}">
             
                       
-            <!-- Start of Name -->
+    <!-- Start of Name -->
 
-            <div class="row">
+    <div class="row">
+        <!-- Given Name -->
+        <div class="input-field col-6">
+            <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+            <input id="given_name" name="given_name" maxlength="50" value="{{ userprofile.given_name }}" type="text" class="validate" required>
+            <label for="given_name">Given or First Name</label>
+        </div>
+        <!-- End of Given Name -->
+        <!-- Family Name -->
+        <div class="input-field col-6">
+            <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+            <input id="family_name" name="family_name" maxlength="50" value="{{ userprofile.family_name }}" type="text" class="validate" required>
+            <label for="family_name">Family Name</label>
+        </div>
+        <!-- End of Family Name -->
+    </div>
+    <!-- End of Name -->
 
-            <!-- Given Name -->
-            
-                <div class="input-field col-6">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="given_name" name="given_name" maxlength="50" value="{{ userprofile.given_name }}" type="text" class="validate" required>
-                    <label for="given_name">Given or First Name</label>
-                </div>
-
-                <div class="input-field col-6">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="family_name" name="family_name" maxlength="50" value="{{ userprofile.family_name }}" type="text" class="validate" required>
-                    <label for="family_name">Family Name</label>
-                </div>
-            
-            <!-- End of Given Name -->
-            </div>
-            <!-- End of Name -->
-            
-            <!-- recipe description -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="recipe_description" name="recipe_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required>
-                        {{- userprofile.username -}}
-                    </textarea>
-                    <label for="recipe_description">Recipe Description</label>
-                </div>
-            </div>
-            <!-- End of Recipe Description -->
-
-            <!-- Recipe Ingredients -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="recipe_ingredients" name="recipe_ingredients" maxlength="200" class="materialize-textarea validate">{{ userprofile.username }}</textarea>
-                    <label for="recipe_ingredients">Ingredients</label>
-                </div>
-            </div>
-            <!-- End of Recipe Ingredients-->
-
-            <!-- Recipe Equipment -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="recipe_equipment" name="recipe_equipment" maxlength="200" class="materialize-textarea validate">{{ userprofile.username }}</textarea>
-                    <label for="recipe_equipment">Equipment</label>
-                </div>
-            </div>
-            <!-- End of Recipe Ingredients-->
-
-            <!-- Recipe Instructions -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="recipe_instructions" name="recipe_instructions" maxlength="200" class="materialize-textarea validate">{{ userprofile.username }}</textarea>
-                    <label for="recipe_instrcutions">Instrcutions</label>
-                </div>
-            </div>
-            <!-- End of Recipe Instructions-->
-            
-            <!-- Recipe Image -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="recipe_image" name="recipe_image" maxlength="200" class="materialize-textarea validate">
-                        {{- userprofile.username -}}
-                    </textarea>
-                    <label for="recipe_image">Recipe Image</label>
-                </div>
-            </div>
-            <!-- End of Recipe Image -->
+               
+    <!-- Start of About Me-->
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+            <textarea id="about_me" name="about_me" minlength="5" maxlength="200" class="materialize-textarea validate">
+                {{- userprofile.about_me -}}
+            </textarea>
+            <label for="about_me">About Me</label>
+        </div>
+    </div>
+    <!-- End of About Me -->
+         
+    <!-- Profile Image -->
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+            <textarea id="profile_image" name="profile_image" maxlength="200" class="materialize-textarea validate">
+                {{- userprofile.profile_image -}}
+            </textarea>
+            <label for="profile_image">Profile Image</label>
+        </div>
+    </div>
+    <!-- End of Profile Image -->
             
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
                     <!-- cancel button -->
-                    <a href="{{ url_for('get_recipes') }}" class="btn-large red text-shadow">
+                    <a href="{{ url_for('profile') }}" class="btn-large red text-shadow">
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
                     
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow" id="mpl-recipe-update">
-                        Update Recipe <i class="fas fa-edit right"></i>
+                        Update Profile <i class="fas fa-edit right"></i>
                     </button>
                   
                 </div>
