@@ -101,13 +101,12 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/profile/", methods=["GET", "POST"])
+def profile():
     # grab the session user's username from db
-    userprofile = mongo.db.users.find_one(
-        {"username": session["user"]})
-        
+    
     if session["user"]:
+        userprofile = mongo.db.users.find_one({"username": session["user"]})
         return render_template("profile.html", userprofile=userprofile)
 
     return redirect(url_for("login"))
@@ -168,8 +167,8 @@ def edit_recipe(recipe_id):
     
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
-@app.route("/edit_user/<user_id>",  methods=["GET", "POST"])
-def edit_user(user_id):
+@app.route("/edit_user/",  methods=["GET", "POST"])
+def edit_user():
 
     # grab the session user's username from db
     userprofile = mongo.db.users.find_one({"username": session["user"]})
@@ -185,11 +184,11 @@ def edit_user(user_id):
             "username": session["user"]
         }
         mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
-        flash("Recipe Successfully Updated")
+        flash("Profile Successfully Updated")
         data_refresh()
         return render_template("recipes.html", recipes=recipes, categories=categories)
         
-    return render_template("edit_user.html", username=user_id, userprofile=userprofile)
+    return render_template("edit_user.html",userprofile=userprofile)
         
  
 @app.route("/delete_recipe/<recipe_id>")
