@@ -22,6 +22,9 @@ def data_refresh():
     global categories, recipes
     categories = mongo.db.categories.find().sort("sequence", 1)
     recipes = list(mongo.db.recipes.find({"upload_date":{"$ne": None}}).sort("upload_date", -1))
+    if session["user"]:
+        userprofile = mongo.db.users.find_one({"username": session["user"]})
+    
 
     for recipe in recipes:
         recipe['family_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["family_name"]
@@ -172,7 +175,6 @@ def edit_user():
 
     # grab the session user's username from db
     userprofile = mongo.db.users.find_one({"username": session["user"]})
-    print(userprofile["username"])
     data_refresh()
     if request.method == "POST":
         submit = {"$set":{
@@ -185,8 +187,9 @@ def edit_user():
         }}
         mongo.db.users.update_one({"username": session["user"]}, submit)
         flash("Profile Successfully Updated")
+        userprofile = mongo.db.users.find_one({"username": session["user"]})
         data_refresh()
-        return render_template("recipes.html", recipes=recipes, categories=categories)
+        return render_template("profile.html", userprofile=userprofile)
         
     return render_template("edit_user.html",userprofile=userprofile)
         
