@@ -22,21 +22,13 @@ def data_refresh():
     global categories, recipes
     categories = mongo.db.categories.find().sort("sequence", 1)
     recipes = list(mongo.db.recipes.find({"upload_date":{"$ne": None}}).sort("upload_date", -1))
-    if session["user"]:
-        userprofile = mongo.db.users.find_one({"username": session["user"]})
-    
-
+   
     for recipe in recipes:
         recipe['family_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["family_name"]
         recipe['given_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["given_name"]
         recipe['profile_image']=mongo.db.users.find_one({"username": recipe["created_by"]})["profile_image"]
-    
-
-
-
-
-
-
+        recipe['about_me']=mongo.db.users.find_one({"username": recipe["created_by"]})["about_me"]
+ 
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
