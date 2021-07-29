@@ -175,15 +175,15 @@ def edit_user():
     print(userprofile["username"])
     data_refresh()
     if request.method == "POST":
-        submit = {
+        submit = {"$set":{
             "given_name": request.form.get("given_name"),
             "family_name": request.form.get("family_name"),
             "about_me": request.form.get("about_me"),
             "password": userprofile["password"],
             "profile_image": request.form.get("profile_image"),
             "username": session["user"]
-        }
-        mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
+        }}
+        mongo.db.users.update_one({"username": session["user"]}, submit)
         flash("Profile Successfully Updated")
         data_refresh()
         return render_template("recipes.html", recipes=recipes, categories=categories)
