@@ -126,6 +126,7 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_equipment": request.form.get("recipe_equipment"),
+            "recipe_image": request.form.get("recipe_image"),
             "upload_date": datetime.today().strftime("%Y-%m-%d"),
             "created_by": session["user"]
         }

@@ -3,15 +3,15 @@
 
 
     <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
+        <div class="col-12">
+            <div class="mpl-card-panel">
                 
-                <h2 class="center-align light-blue-text text-darken-4">
+                <h1>
                     Profile for
-                </h2>
-                <h3 class="center-align light-blue-text text-darken-4">
+                </h1>
+                <h2>
                     {{ userprofile.given_name }} {{userprofile.family_name}}
-                </h3>
+                </h2>
     <!-- Start of Profile Image-->
     <div id="mpl-profile-image-container">
         {% if session.user|lower == userprofile.username|lower %}
@@ -20,7 +20,10 @@
         <img id="mpl-profile-main" src="{{userprofile.profile_image}}">
     </div>
     <!-- End of Profile Image-->
-                <p> {{ userprofile.about_me}}</p>
+
+    <!-- Profile About Me-->
+                <p class="mpl-profile-aboutme"> {{ userprofile.about_me}}</p>
+    <!-- Profile About Me-->
             </div>
         </div>
     </div>

@@ -17,9 +17,7 @@ nav{
 
 /* Global Characteristics */
 
-.collapsible-body{
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
+
 
 #mpl-flashes{
     padding: 0;
@@ -60,8 +58,40 @@ body {
     color: #762b32dd;
 }
 
-.card-panel img{
-    width: 100%;
+/* End of Global Characteristics */
+
+/* Start of Profile Section */
+
+.mpl-card-panel {
+    border: 3px #fff ridge;
+    border-radius: 5px;
+    background-color: #dddddddd;
+    padding: 5%;
+    margin: auto;
+    max-width: 600px;
+    margin: 3% auto;
+}
+
+.mpl-card-panel img{
+    width: 80%;
+}
+
+.mpl-card-panel h1{
+    color:#461b22;
+    font-size: 16pt;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.mpl-card-panel h2{
+    color:#461b22;
+    font-size: 24pt;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
 }
 
 .mpl-profile-thumbnail {
@@ -74,7 +104,16 @@ body {
     border-radius: 5px;
     border: 5px ridge #dcd7d6;
 }
-/* End of Global Characteristics */
+
+.mpl-profile-aboutme {
+    display: block;
+    padding: 3px;
+    font-size: 16pt;
+    color:#461b22;
+    background-color: #ffffffdd;
+}
+/* End of Profile Section */
+
 
 /* Recipes */
 .mpl-recipe-row {
@@ -82,15 +121,19 @@ body {
     
 }
 
-.collapsible-body {
-    background-color: #039be5ee;
-}
-
 .collapsible-header {
     width: 100%;
     background-color: #762b32f5;
 }
 
+.collapsible-body{
+    background-color: #964b52d5;
+}
+
+.collapsible-body h1{
+    font-size: 14pt;
+    
+}
 
 .mpl-recipe-col-a {
     padding: 0px;
@@ -144,7 +187,10 @@ body {
 
 .collapsible-body h1 {
     margin: 0;
-    font-size: 12pt;
+    font-size: 18pt;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    letter-spacing: 2px;
 }
 
 .mpl-recipe-ingredients {
