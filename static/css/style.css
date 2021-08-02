@@ -1,6 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 /* Start of Navigation */
 nav{
-    background-color: #762b32dd;
+    background-color: #762b32;
 }
 
 .mpl-nav-heading, .mpl-nav-heading:hover {
@@ -63,8 +68,8 @@ body {
 /* Start of Profile Section */
 
 .mpl-card-panel {
-    border: 3px #fff ridge;
-    border-radius: 5px;
+    border: 6px #fff ridge;
+    border-radius: 10px;
     background-color: #dddddddd;
     padding: 5%;
     margin: auto;
@@ -74,6 +79,7 @@ body {
 
 .mpl-card-panel img{
     width: 80%;
+    border-radius: 5px;
 }
 
 .mpl-card-panel h1{
@@ -86,7 +92,7 @@ body {
 
 .mpl-card-panel h2{
     color:#461b22;
-    font-size: 24pt;
+    font-size: 28pt;
     letter-spacing: 3px;
     font-weight: 800;
     text-align: center;
@@ -107,13 +113,21 @@ body {
 
 .mpl-profile-aboutme {
     display: block;
-    padding: 3px;
-    font-size: 16pt;
+    padding: 10px;
+    font-size: 18pt;
     color:#461b22;
     background-color: #ffffffdd;
+    letter-spacing: 2px;
 }
 /* End of Profile Section */
 
+/* Add Recipe */
+
+.mpl-addrecipe-card-panel i {
+    color: #762b32;
+}
+
+/* End of Add Recipe */
 
 /* Recipes */
 .mpl-recipe-row {
