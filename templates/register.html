@@ -1,15 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h3 class="text-darken-4 center-align mpl-heading">Register</h3>
-
-    <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel">
-                <!-- Start of Username -->
+    <div class="row mpl-card mpl-card-addrecipe lighten-5">
+        <h1>Register for an Account</h1>
+        <form class="col s12" method="POST" action="{{ url_for('register') }}">
+                            <!-- Start of Username -->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-user-plus prefix text-darken-4"></i>
 						<input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
 						<label for="username">Username</label>
@@ -20,7 +17,7 @@
                 <!-- Start of Password -->
                 <div class="row">
                     <div class="input-field col s12">
-						<i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-user-lock prefix text-darken-4"></i>
                         <input id="password" name="password" type="password" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
@@ -31,7 +28,7 @@
                 <!-- Given Name -->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-pencil-alt prefix text-darken-4"></i>
 						<input id="given-name" name="given-name" type="text" required>
 						<label for="given-name">Given Name</label>
 					</div>
@@ -41,7 +38,7 @@
                 <!-- Family Name -->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-pencil-alt prefix text-darken-4"></i>
 						<input id="family-name" name="family-name" type="text" required>
 						<label for="family-name">Family Name</label>
 					</div>
@@ -51,7 +48,7 @@
                 <!-- Start of About Me -->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-align-left prefix text-darken-4"></i>
 						<input id="about_me" name="about_me" type="text">
 						<label for="about_me">About Me</label>
 					</div>
@@ -61,7 +58,7 @@
                 <!-- Profile Image -->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-link prefix text-darken-4"></i>
 						<input id="profile-image" name="profile-image" type="text" minlength="5" required>
 						<label for="profile-image">Profile Image</label>
 					</div>
@@ -70,21 +67,21 @@
 
                 <!-- register -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+                    <button type="submit" class="col s12 btn-large darken-4 text-shadow mpl-card-button">
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
-            </div>
+           
         </form>
     </div>
 
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
+
+        <div class="mpl-footnote-container">
+            <p class="mpl-login-newuser">
                 Already Registered?
-                <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
+                <a href="{{ url_for('login') }}">Log In</a>
             </p>
         </div>
-    </div>
+
 
 {% endblock %}
