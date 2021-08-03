@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="text-darken-4 center-align mpl-heading">Add Recipe</h3>
+   
 
-    <div class="row mpl-addrecipe-card-panel grey lighten-5">
+    <div class="row mpl-card mpl-card-addrecipe lighten-5">
+        <h1>Add Recipe</h1>
         <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
             <!-- category selection -->
 			<div class="row">
-				<div class="input-field col s12">
+				<div class="input-field col s12 mpl-addrecipe-input">
                     <i class="fas fa-folder-open prefix text-darken-4"></i>
 					<select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose Category</option>
@@ -82,7 +83,7 @@
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    <button type="submit" class="btn-large darken-1 text-shadow mpl-addrecipe-button">
                         Add Recipe <i class="fas fa-plus-square white-text right"></i>
                     </button>
                 </div>

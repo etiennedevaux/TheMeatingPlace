@@ -1,34 +1,50 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-/* Start of Navigation */
-nav{
-    background-color: #762b32;
-}
-
-.mpl-nav-heading, .mpl-nav-heading:hover {
-    font-family: "Bradley Hand ITC", sans-serif;
-    letter-spacing: 5px;
-    text-shadow: 5px 3px #461b22;
-    text-decoration: wavy;
-    font-size: 28pt;
-    margin-left: 20px;
-    color: #fff;
-}
-
-/* End of Navigation */
-
 /* Global Characteristics */
-
-
 
 #mpl-flashes{
     padding: 0;
     animation-name: flash-item;
     animation-duration: 25s;
     animation-fill-mode: forwards;
+}
+
+.mpl-card {
+    border: ridge 5px #999;
+    background-color: #eeeeeeee;
+    max-width: 800px;
+    padding: 5px;
+    margin: 2% auto;
+    border-radius: 5px;
+}
+
+.mpl-card i{
+    color: #762b32;
+}
+
+.mp-card input {
+    margin-bottom: 0;
+}
+
+.mpl-card h1 {
+    margin: 0;
+    color: #762b32dd;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 24pt;
+    padding: 1%;
+}
+
+.mpl-card form{
+ margin: 0;
+}
+
+.mpl-card button{
+    background-color: #762b32;
+    margin: 0;
+}
+
+.mpl-card-button i{
+    color: #fff;
 }
 
 .flashes h4 {
@@ -62,9 +78,66 @@ body {
     background-color: #ffffffdd;
     color: #762b32dd;
     margin-bottom: 0;
+    width: 100%;
+    display: block;
 }
 
 /* End of Global Characteristics */
+
+/* Start of Navigation */
+nav{
+    background-color: #762b32;
+}
+
+.mpl-nav-heading, .mpl-nav-heading:hover {
+    font-family: "Bradley Hand ITC", sans-serif;
+    letter-spacing: 5px;
+    text-shadow: 5px 3px #461b22;
+    text-decoration: wavy;
+    font-size: 28pt;
+    margin-left: 20px;
+    color: #fff;
+}
+
+/* End of Navigation */
+
+/* Start of Login*/
+
+.mpl-login-card {
+    border: 6px #fff ridge;
+    background-color: #ffffffee;
+    padding: 5%;
+    max-width: 600px;
+    margin: 3% auto;
+}
+
+.mpl-login-card i{
+    color: #762b32;
+}
+
+.mpl-login-newuser {
+    color: #fff;
+    font-weight: 700;
+    font-size: 200%;
+    letter-spacing: 3px;
+    background-color: #888888ee;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.mpl-login-newuser a {
+    margin: 0;
+    color: #005;
+}
+
+.mpl-footnote-container {
+    width: 50%;
+    margin: 5% auto;
+}
+
+
+
+/* End of Login */
 
 /* Start of Profile Section */
 
@@ -124,8 +197,9 @@ body {
 
 /* Add Recipe */
 
-.mpl-addrecipe-card-panel i {
-    color: #762b32;
+.mpl-card-addrecipe div {
+    margin-top:5px;
+    margin-bottom: 5px;
 }
 
 /* End of Add Recipe */
