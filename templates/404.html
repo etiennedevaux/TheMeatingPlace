@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found{% endblock %}
+{% block content %}
+  
+  <div class="mpl-error-box">
+  <script src="{{ url_for('static', filename='js/errors.js') }}"></script>
+  <p>It looks like the requested page does not exist.</p>
+  <p>
+      <a href="{{ url_for('get_recipes') }}">Click Here</a>
+      For the Starting Page</p>
+  <p id="mpl-redirect-warning"></p>
+    <script>
+        redirect("/", 10);
+    </script>
+ </div>
+  
+{% endblock %}

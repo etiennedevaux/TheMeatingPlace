@@ -29,6 +29,13 @@ def data_refresh():
         recipe['profile_image']=mongo.db.users.find_one({"username": recipe["created_by"]})["profile_image"]
         recipe['about_me']=mongo.db.users.find_one({"username": recipe["created_by"]})["about_me"]
  
+# https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
+@app.errorhandler(404)
+def not_found(e):
+    flash(e)
+    return render_template("404.html")
+
+
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():

@@ -27,7 +27,7 @@ nav{
 #mpl-flashes{
     padding: 0;
     animation-name: flash-item;
-    animation-duration: 15s;
+    animation-duration: 25s;
     animation-fill-mode: forwards;
 }
 
@@ -59,8 +59,9 @@ body {
 }
 
 .mpl-heading {
-    background-color: #fff;
+    background-color: #ffffffdd;
     color: #762b32dd;
+    margin-bottom: 0;
 }
 
 /* End of Global Characteristics */
@@ -132,7 +133,10 @@ body {
 /* Recipes */
 .mpl-recipe-row {
     margin-bottom: 0;
-    
+}
+
+.mpl-recipes-collapsible {
+    margin-top: 0;
 }
 
 .collapsible-header {
@@ -264,6 +268,26 @@ body {
 }
 
 /* End of Profiles */
+
+/* Start of Error Handling */
+
+.mpl-error-box {
+    background-color: #ddd;
+    text-align: center;
+    padding: 10%;
+    border: ridge #888 5px;
+}
+
+.mpl-error-box p{
+    font-size: 16pt;
+    margin: 10%;
+}
+
+.mpl-redirect-secs {
+    font-weight: 800;
+    font-size: 110%;
+}
+/* End of Error Handling */
 
   /* Animation for the front page call to action. */
   @keyframes flash-item{
