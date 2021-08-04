@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3 class="text-darken-4 center-align mpl-heading">Edit User Profile</h3>
-    <div class="row card-panel grey lighten-5 mpl-edituser-card">
+    
+    <div class="row mpl-card grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('edit_user', user_id=userprofile._id) }}">
-            
+            <h1>Edit User Profile</h1>
                       
     <!-- Start of Name -->
 
@@ -41,7 +41,7 @@
     <!-- Profile Image -->
     <div class="row">
         <div class="input-field col s12">
-            <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+            <i class="fas fa-link prefix light-blue-text text-darken-4"></i>
             <textarea id="profile_image" name="profile_image" maxlength="200" class="materialize-textarea validate">
                 {{- userprofile.profile_image -}}
             </textarea>
@@ -58,7 +58,7 @@
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
                     
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow" id="mpl-recipe-update">
+                    <button type="submit" class="btn-large darken-1 text-shadow mpl-editrecipe-button">
                         Update Profile <i class="fas fa-edit right"></i>
                     </button>
                   

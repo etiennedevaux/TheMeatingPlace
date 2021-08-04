@@ -20,7 +20,7 @@
     color: #762b32;
 }
 
-.mp-card input {
+.mpl-card input {
     margin-bottom: 0;
 }
 
@@ -200,6 +200,36 @@ nav{
 
 /* End of Add Recipe */
 
+/* Edit Recipe */
+
+.mpl-recipe-edit{
+    z-index: 5;
+}
+
+#mpl-recipe-update a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+}
+
+#mpl-recipe-update a:hover{
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+}
+
+#mpl-recipe-update i, #mpl-recipe-update-cancel i{
+    color: #fff;
+}
+
+.mpl-card-editrecipe div {
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+/* End of Edit Recipe */
+
 /* Recipes */
 .mpl-recipe-row {
     margin-bottom: 0;
@@ -285,22 +315,7 @@ nav{
     height: 200px;
 }
 
-.mpl-recipe-edit{
-    z-index: 5;
-}
 
-#mpl-recipe-update a{
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    width: 100%;
-}
-
-#mpl-recipe-update a:hover{
-    text-decoration: none;
-    color: #000;
-    font-weight: 700;
-}
 
 .mpl-recipe-profile {
     display: none;
