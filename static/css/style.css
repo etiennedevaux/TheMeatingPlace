@@ -339,6 +339,50 @@ nav{
 
 /* End of Profiles */
 
+/* Start of Categories */
+
+.mpl-categories-actions a {
+    margin: 10px auto;
+}
+
+.mpl-categories-row {
+    margin: 0;
+    border: 2px solid #555;
+}
+
+.mpl-categories li {
+   margin: 0 auto;
+   text-align: center;
+   width: 60%;
+   background-color: #461b22;
+}
+
+.mpl-categories-text {
+    display:flex;
+    align-items: center;
+    color:#fff;
+}
+
+.mpl-categories-text p{
+      margin: 0;
+ }
+
+.mpl-categories-actions {
+   
+}
+
+.mpl-categories-button {
+    background-color:#461b22;
+   
+}
+
+.mpl-categories-button i {
+    color: #fff;
+   
+}
+
+/* End of Categories */
+
 /* Start of Error Handling */
 
 .mpl-error-box {
