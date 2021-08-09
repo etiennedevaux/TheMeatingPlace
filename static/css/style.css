@@ -7,6 +7,10 @@
     animation-fill-mode: forwards;
 }
 
+.mpl-button-icon {
+    color: #fff;
+}
+
 .mpl-card {
     border: ridge 5px #999;
     background-color: #eeeeeeee;
@@ -16,8 +20,19 @@
     border-radius: 5px;
 }
 
+
+
 .mpl-card i{
     color: #762b32;
+}
+
+.mpl-card button{
+    background-color: #762b32;
+    margin: 0;
+}
+
+.mpl-card-button i{
+    color: #fff;
 }
 
 .mpl-card input {
@@ -38,14 +53,6 @@
  margin: 0;
 }
 
-.mpl-card button{
-    background-color: #762b32;
-    margin: 0;
-}
-
-.mpl-card-button i{
-    color: #fff;
-}
 
 .flashes h4 {
     line-height: 2;
