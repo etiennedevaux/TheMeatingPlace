@@ -1,17 +1,26 @@
 # The Meating Place Website
-View the live project here.
-[The Meating Place](https://the-meating-place.herokuapp.com/)
-[The Meating Place Project](https://github.com/etiennedevaux/TheMeatingPlace)
 
-This is the main marketing website for Code Institute. It is designed to be responsibe and accessible on a range of devices, making it easy to navigate for potential students and partners.
+## Project Websites
 
+View the live project here:  
+- [ The Meating Place](https://the-meating-place.herokuapp.com/)  
 
-User Experience (UX)
-User stories
+This is the main website for people to contribute, read and exchange recipes. It is designed to be responsive and accessible on a range of devices, making it easy to navigate for amateur and professional chefs alike.
+
+Visit the Project Website and Shared Resource Area Here:  
+- [ The Meating Place Project](https://github.com/etiennedevaux/TheMeatingPlace)
+
+This is the GitHub project area for people to collaborate, contribute and to download or share code for other projects.
+
+## User Experience (UX)
+### User stories
 First Time Visitor Goals
-As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
-As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
-As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
+As a First Time Visitor I want to
+- easily understand the main purpose of the site.
+- be able to browse the recipes that have already been uploaded.
+- be able to see a brief profile of the person who uploaded the recipe.
+- be able to register myself as a user so that I can upload and edit my own recipes.
+
 Returning Visitor Goals
 As a Returning Visitor, I want to find information about coding challenges.
 As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
