@@ -93,7 +93,7 @@
             
             <!-- submit button -->
             <div class="row">
-                <div class="col s12 center-align">
+                <div class="col s12 center-align" >
                     <!-- cancel button -->
                     <a href="{{ url_for('get_recipes') }}" class="btn-large red text-shadow" id="mpl-recipe-update-cancel">
                         Cancel <i class="fas fa-times-circle right"></i>
@@ -102,6 +102,15 @@
                     <button type="submit" class="btn-large darken-1 text-shadow" id="mpl-recipe-update">
                         Update Recipe <i class="fas fa-edit right"></i>
                     </button>
+
+                    <button type="button" onclick="deleteRecipeConfirm()" class="btn-large text-shadow" id="mpl-recipe-delete">
+                        Delete <i class="fas fa-trash-alt right"></i>
+                    </button>
+                    <div id="mpl-recipe-confirm">
+                        <p>Are you sure you want to permanently delete this recipe?</p>
+                        <button type="button" onclick="deleteRecipe('{{url_for('delete_recipe', recipe_id=recipe._id)}}')" >Confirm</button>
+                        <button type="button" onclick="deleteRecipeCancel()">Cancel</button>
+                    </div>
                   
                 </div>
             </div>

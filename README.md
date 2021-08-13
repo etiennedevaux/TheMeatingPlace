@@ -3,37 +3,44 @@
 ## Project Websites
 
 View the live project here:  
-- [ The Meating Place](https://the-meating-place.herokuapp.com/)  
+- [The Meating Place](https://the-meating-place.herokuapp.com/)  
 
 This is the main website for people to contribute, read and exchange recipes. It is designed to be responsive and accessible on a range of devices, making it easy to navigate for amateur and professional chefs alike.
 
 Visit the Project Website and Shared Resource Area Here:  
-- [ The Meating Place Project](https://github.com/etiennedevaux/TheMeatingPlace)
+- [The Meating Place Project](https://github.com/etiennedevaux/TheMeatingPlace)
 
 This is the GitHub project area for people to collaborate, contribute and to download or share code for other projects.
 
 ## User Experience (UX)
 ### User stories
-First Time Visitor Goals
-As a First Time Visitor I want to
-- easily understand the main purpose of the site.
-- be able to browse the recipes that have already been uploaded.
-- be able to see a brief profile of the person who uploaded the recipe.
-- be able to register myself as a user so that I can upload and edit my own recipes.
 
-Returning Visitor Goals
-As a Returning Visitor, I want to find information about coding challenges.
-As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
-As a Returning Visitor, I want to find community links.
-Frequent User Goals
-As a Frequent User, I want to check to see if there are any newly added challenges or hackathons.
-As a Frequent User, I want to check to see if there are any new blog posts.
-As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
+#### First Time Visitor Goals
+As a First Time Visitor I want to
+- quickly see a range of the recipes that have been contributed.
+- be able to browse the recipes that have already been uploaded.
+- be able to view recipe ingredients, equipment and instructions for a selected recipe.
+- be able to see a brief profile of the person who uploaded the recipe.
+
+#### Returning Visitor Goals
+As a Returning Visitor I want to
+- be able to register myself as a user.
+- be able to create, update and delete my own recipes.
+- be able to create update and delete my own profile
+ 
+#### Frequent User Goals
+As a Returning Visitor I want to
+- be able to register myself as a user.
+- be able to create, update and delete my own recipes.
+- be able to create update and delete my own profile
+
+#### Web-Based Administrator
 Design
 Colour Scheme
-The two main colours used are Code Insititue red, and white.
+The two main colours used are purple and white, but the artwork includes many shades in order to portray an authentic French-style restaurant.
 Typography
-The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
+The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.  Variety is provided with use of colours, letter spacing, shadows and varying font weights.
+
 Imagery
 Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 Wireframes
