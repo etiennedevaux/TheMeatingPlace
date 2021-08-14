@@ -103,13 +103,15 @@
                         Update Recipe <i class="fas fa-edit right"></i>
                     </button>
 
-                    <button type="button" onclick="deleteRecipeConfirm()" class="btn-large text-shadow" id="mpl-recipe-delete">
+                    <button type="button" onclick="deleteRecipeConfirm()" class="btn-large text-shadow mpl-delete" id="mpl-recipe-delete">
                         Delete <i class="fas fa-trash-alt right"></i>
                     </button>
                     <div id="mpl-recipe-confirm">
                         <p>Are you sure you want to permanently delete this recipe?</p>
-                        <button type="button" onclick="deleteRecipe('{{url_for('delete_recipe', recipe_id=recipe._id)}}')" >Confirm</button>
-                        <button type="button" onclick="deleteRecipeCancel()">Cancel</button>
+                        <button type="button" onclick="deleteRecipe('{{url_for('delete_recipe', recipe_id=recipe._id)}}')" id="mpl-recipe-delete-confirm"  class="btn-large text-shadow mpl-delete">Confirm Deletion <i class="fas fa-trash-alt right"></i></button>
+                        <button type="button" onclick="deleteRecipeCancel()" id="mpl-recipe-delete-cancel" class="btn-large red text-shadow mpl-cancel" >
+                            Cancel <i class="fas fa-times-circle right"></i>
+                        </button>
                     </div>
                   
                 </div>

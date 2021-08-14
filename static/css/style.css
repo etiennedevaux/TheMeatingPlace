@@ -242,6 +242,14 @@ nav{
     display: none;
 }
 
+.mpl-delete i, .mpl-cancel i {
+    color: #fff;
+}
+
+#mpl-recipe-delete, #mpl-recipe-delete-confirm {
+    background-color: #ca0f0f;
+}
+
 .fa-trash-alt {
     color: #fff;
 }
