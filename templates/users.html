@@ -23,12 +23,10 @@
                 </div>
                 <div class="col-3 mpl-categories-actions">
                     <a href="{{ url_for('user_admin', user_id=user._id) }}"
-                        class="btn accent-4 mpl-edit">Edit</a>
+                        class="btn accent-4 mpl-edit">Edit  <i class="far fa-edit"></i></a>
                 </div>
                 <div class="col-3 mpl-categories-actions">
-
-                    <a href="{{ url_for('delete_user', user_id=user._id) }}"
-                        class="btn lighten-1 mpl-delete">Delete</a>
+                    <a href="{{ url_for('delete_user', user_id=user._id) }}" class="btn lighten-1 mpl-delete">Delete   <i class="far fa-trash-alt"></i></a>
                 </div>
             </div>
 
