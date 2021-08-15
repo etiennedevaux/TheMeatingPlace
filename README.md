@@ -16,27 +16,30 @@ This is the GitHub project area for people to collaborate, contribute and to dow
 ### User stories
 
 #### First Time Visitor Goals
-As a First Time Visitor I want to
+As a First Time Visitor I want to:
 - quickly see a range of the recipes that have been contributed.
 - be able to browse the recipes that have already been uploaded.
 - be able to view recipe ingredients, equipment and instructions for a selected recipe.
 - be able to see a brief profile of the person who uploaded the recipe.
 
 #### Returning Visitor Goals
-As a Returning Visitor I want to
-- be able to register myself as a user.
-- be able to create, update and delete my own recipes.
-- be able to create update and delete my own profile
- 
-#### Frequent User Goals
-As a Returning Visitor I want to
-- be able to register myself as a user.
-- be able to create, update and delete my own recipes.
-- be able to create update and delete my own profile
+As a Returning Visitor I want to be able to achieve all of the First Time Visitor goals and also want to:
+- be able to register as a user and create my own profile.
+- be able to create and save my own recipes.
 
+#### Registered User Goals
+As a Registered User I want to achieve all of the First Time Visitor and Returning Visitor goals and also want to:
+- be able to edit my user profile.
+- be able to update and delete my own recipes.
+ 
 #### Web-Based Administrator
-Design
-Colour Scheme
+As a Web-Based Administrator I want to be able to achieve all of the First Time Visitor, Returning Visitor and Registered User goals and also want to:   
+- Create, Read, Update and Delete the recipe Categories
+- Create, Read, Update and Delete Registered Users
+
+
+### Design  
+#### Colour Scheme  
 The two main colours used are purple and white, but the artwork includes many shades in order to portray an authentic French-style restaurant.
 Typography
 The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.  Variety is provided with use of colours, letter spacing, shadows and varying font weights.

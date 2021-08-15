@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="mpl-card">
+<div class="mpl-admin-card">
 
     <h1>Manage Categories</h1>
 
@@ -21,13 +21,10 @@
                     <p>{{ category.category_name }}</p>
                 </div>
                 <div class="col-3 mpl-categories-actions">
-                    <a href="{{ url_for('edit_category', category_id=category._id) }}"
-                        class="btn green accent-4">Edit</a>
+                    <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn mpl-edit">Edit <i class="far fa-edit"></i></a>
                 </div>
                 <div class="col-3 mpl-categories-actions">
-
-                    <a href="{{ url_for('delete_category', category_id=category._id) }}"
-                        class="btn light-blue lighten-1">Delete</a>
+                    <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn lighten-1 mpl-delete">Delete <i class="far fa-trash-alt"></i></a>
                 </div>
             </div>
 
@@ -38,8 +35,7 @@
 
     </ul>
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_category') }}" class="btn-large darken-2 text-shadow mpl-categories-button">
-            Add New Category <i class="fas fa-plus-square right"></i>
+        <a href="{{ url_for('add_category') }}" class="btn-large darken-2 text-shadow mpl-add">Add New Category <i class="fas fa-plus-square right"></i>
         </a>
     </div>
 </div>

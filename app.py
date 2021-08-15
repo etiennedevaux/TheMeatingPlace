@@ -170,6 +170,27 @@ def edit_recipe(recipe_id):
     
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
+@app.route("/user_admin/<user_id>", methods=["GET", "POST"])
+def user_admin(user_id):
+    data_refresh()
+    if request.method == "POST":
+        submit = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "family_name": request.form.get("family-name"),
+            "given_name": request.form.get("given-name"),
+            "about_me": request.form.get("about_me"),
+            "profile_image": request.form.get("profile-image")
+        }
+        mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
+        flash("User Successfully Updated")
+        data_refresh()
+        users=mongo.db.users.find()
+        return render_template("users.html", users=users)
+
+    userprofile=mongo.db.users.find_one({"_id": ObjectId(user_id)})      
+    return render_template("user_admin.html", userprofile=userprofile)
+
 @app.route("/edit_user/",  methods=["GET", "POST"])
 def edit_user():
 
@@ -200,11 +221,22 @@ def delete_recipe(recipe_id):
     flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
 
+@app.route("/delete_user/<user_id>")
+def delete_user(user_id):
+    mongo.db.users.delete_one({"_id": ObjectId(user_id)})
+    flash("User Successfully Deleted")
+    return redirect(url_for("get_users"))
+
 
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
+@app.route("/get_users")
+def get_users():
+    users = list(mongo.db.users.find().sort("username", 1))
+    return render_template("users.html", users=users)
 
 
 @app.route("/add_category", methods=["GET", "POST"])

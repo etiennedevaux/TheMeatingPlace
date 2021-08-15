@@ -11,11 +11,44 @@
     animation-fill-mode: forwards;
 }
 
+.mpl-warning {
+    color: #ca0f0f;
+    font-weight: 800;
+    font-size: 120%;
+    letter-spacing: 2px;
+}
+
 .mpl-button-icon {
     color: #fff;
 }
 
-.mpl-card {
+
+.mpl-delete {
+    background-color: #ca0f0f;
+}
+
+.mpl-edit {
+    background-color: #29b6f6
+}
+
+.mpl-cancel {
+    background-color: #F44336;
+}
+
+.mpl-update {
+    background-color: #762b32;
+    margin: 0;
+}
+
+.mpl-add {
+    background-color: #2a6d08;
+}
+
+.mpl-delete i, .mpl-cancel i, .mpl-edit i, .mpl-update i, .mpl-add i {
+    color: #fff;
+}
+
+.mpl-card, .mpl-admin-card {
     border: ridge 5px #999;
     background-color: #eeeeeeee;
     max-width: 800px;
@@ -24,26 +57,23 @@
     border-radius: 5px;
 }
 
-
-
-.mpl-card i{
+.prefix{
     color: #762b32;
 }
 
-.mpl-card button{
-    background-color: #762b32;
-    margin: 0;
+.collapsible-body a {
+    margin-bottom: 20px;
 }
 
-.mpl-card-button i{
-    color: #fff;
+.collapsible-body {
+    padding-top: 10px;
 }
 
 .mpl-card input {
     margin-bottom: 0;
 }
 
-.mpl-card h1 {
+.mpl-card h1, .mpl-admin-card h1 {
     margin: 0;
     color: #762b32dd;
     width: 100%;
@@ -242,10 +272,6 @@ nav{
     display: none;
 }
 
-.mpl-delete i, .mpl-cancel i {
-    color: #fff;
-}
-
 #mpl-recipe-delete, #mpl-recipe-delete-confirm {
     background-color: #ca0f0f;
 }
@@ -409,7 +435,7 @@ nav{
 .mpl-categories li {
    margin: 0 auto;
    text-align: center;
-   width: 60%;
+   width: 80%;
    background-color: #461b22;
 }
 
