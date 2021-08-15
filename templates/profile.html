@@ -2,9 +2,9 @@
 {% block content %}
 
 
-    <div class="row">
+    <div class="row mpl-card">
         <div class="col-12">
-            <div class="mpl-card-panel">
+            <div>
                 
                 <h1>
                     Profile for
@@ -18,12 +18,13 @@
             <a id="mpl-user-edit" href="{{ url_for('edit_user') }}" class="btn-small light-blue lighten-1 mpl-edit">Edit <i class="far fa-edit"></i></a>
         {% endif %}
         <img id="mpl-profile-main" src="{{userprofile.profile_image}}">
-    </div>
+
     <!-- End of Profile Image-->
 
     <!-- Profile About Me-->
                 <p class="mpl-profile-aboutme"> {{ userprofile.about_me}}</p>
     <!-- Profile About Me-->
+</div>
             </div>
         </div>
     </div>

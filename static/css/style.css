@@ -101,8 +101,20 @@
     width: 100%;
     display: block;
     text-align: center;
-    font-size: 24pt;
+    font-size: 120%;
     padding: 1%;
+}
+
+.mpl-card h2, .mpl-admin-card h2 {
+    margin: 0;
+    color: #762b32dd;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 200%;
+    padding: 1%;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
 .mpl-card form{
@@ -167,6 +179,27 @@ nav{
 
 /* Start of Profile Section */
 
+#mpl-profile-main{
+    width: 60%;
+}
+
+#mpl-profile-image-container{
+ text-align: center;
+ padding: 1%;
+}
+
+#mpl-user-edit{
+    position: absolute;
+}
+
+.card-panel {
+    width: 50%;
+}
+
+.mpl-edituser-card {
+    width: 80%;
+}
+
 .mpl-card-panel {
     border: 6px #fff ridge;
     border-radius: 10px;
@@ -216,7 +249,9 @@ nav{
     font-size: 18pt;
     color:#461b22;
     background-color: #ffffffdd;
-    letter-spacing: 2px;
+    width: 60%;
+    margin: auto;
+    text-align: justify;
 }
 /* End of Profile Section */
 
@@ -390,25 +425,7 @@ nav{
 
 /* End of Recipes */
 
-/* Start of Profiles */
 
-#mpl-profile-main{
-    width: 100%;
-}
-
-#mpl-user-edit{
-    position: absolute;
-}
-
-.card-panel {
-    width: 50%;
-}
-
-.mpl-edituser-card {
-    width: 80%;
-}
-
-/* End of Profiles */
 
 /* Start of Categories */
 
