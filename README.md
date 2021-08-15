@@ -72,6 +72,14 @@ Wireframes are created using the Evolus Pencil wireframe and prototyping tool [E
 
 - ![Desktop](project_files/wireframes/new_recipe_page_desktop.png)
 
+## Manage Categories Page Wireframe
+
+- ![Desktop](project_files/wireframes/manage_categories_page_desktop.png)
+
+## Manage Users Page Wireframe
+
+- ![Desktop](project_files/wireframes/manage_users_page_desktop.png)
+
 Mobile Wireframe - View
 
 Contact Us Page Wireframe - View

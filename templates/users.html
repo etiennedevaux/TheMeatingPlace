@@ -18,8 +18,8 @@
             <div class="row mpl-categories-row">
 
                 <div class="col-6 mpl-categories-text">
-                    <p>{{ user.username }}</p>
-                    <p>{{ user.given_name }}</p>
+                    <p class="mpl-users-username">{{ user.username }}</p>
+                    <p class="mpl-users-user">({{ user.given_name }} {{ user.family_name }})</p>
                 </div>
                 <div class="col-3 mpl-categories-actions">
                     <a href="{{ url_for('user_admin', user_id=user._id) }}"

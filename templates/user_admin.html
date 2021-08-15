@@ -2,7 +2,7 @@
 {% block content %}
     
     <div class="row mpl-card grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_user', user_id=userprofile._id) }}">
+        <form class="col s12" method="POST" action="{{ url_for('edit_user', user_id=useradmin._id) }}">
             <h1>Edit User</h1>
                       
     <!-- Start of Username -->
@@ -10,7 +10,7 @@
         <div class="input-field col s12">
             <i class="fas fa-user-plus prefix text-darken-4"></i>
             <input id="username" name="username" type="text" minlength="5"
-                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required value="{{ userprofile.username }}">
+                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required value="{{ useradmin.username }}">
             <label for="username">Username</label>
         </div>
     </div>
@@ -21,14 +21,14 @@
         <!-- Given Name -->
         <div class="input-field col-6">
             <i class="fas fa-pencil-alt prefix text-darken-4"></i>
-            <input id="given_name" name="given_name" maxlength="50" value="{{ userprofile.given_name }}" type="text" class="validate" required>
+            <input id="given_name" name="given_name" maxlength="50" value="{{ useradmin.given_name }}" type="text" class="validate" required>
             <label for="given_name">Given or First Name</label>
         </div>
         <!-- End of Given Name -->
         <!-- Family Name -->
         <div class="input-field col-6">
             <i class="fas fa-pencil-alt prefix text-darken-4"></i>
-            <input id="family_name" name="family_name" maxlength="50" value="{{ userprofile.family_name }}" type="text" class="validate" required>
+            <input id="family_name" name="family_name" maxlength="50" value="{{ useradmin.family_name }}" type="text" class="validate" required>
             <label for="family_name">Family Name</label>
         </div>
         <!-- End of Family Name -->
@@ -41,7 +41,7 @@
         <div class="input-field col s12">
             <i class="fas fa-align-left prefix text-darken-4"></i>
             <textarea id="about_me" name="about_me" minlength="5" maxlength="200" class="materialize-textarea validate">
-                {{- userprofile.about_me -}}
+                {{- useradmin.about_me -}}
             </textarea>
             <label for="about_me">About Me</label>
         </div>
@@ -53,7 +53,7 @@
         <div class="input-field col s12">
             <i class="fas fa-link prefix text-darken-4"></i>
             <textarea id="profile_image" name="profile_image" maxlength="200" class="materialize-textarea validate">
-                {{- userprofile.profile_image -}}
+                {{- useradmin.profile_image -}}
             </textarea>
             <label for="profile_image">Profile Image</label>
         </div>

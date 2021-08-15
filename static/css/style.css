@@ -177,6 +177,22 @@ nav{
 /* Start of Login*/
 /* End of Login */
 
+/* Start of Users Page*/
+
+.mpl-users-username{
+    font-weight: 700;
+    font-size: 120%;
+    letter-spacing: 2px;
+}
+
+.mpl-users-user{
+    font-weight: 300;
+    padding-left: 5%;
+}
+
+
+/* End of Users Page */
+
 /* Start of Profile Section */
 
 #mpl-profile-main{
