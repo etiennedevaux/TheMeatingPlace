@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row">
+    <div class="row mpl-card">
         <form class="col s12 m8" method="POST" action="{{ url_for('login') }}">
-            <div class="card-panel mpl-card mpl-login-card">
+            
                 <!-- username -->
                 <div class="row">
 					<div class="input-field col s12">
@@ -24,15 +24,15 @@
                 </div>
                 <!-- login -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large darken-4 text-shadow mpl-card-button">
+                    <button type="submit" class="col s12 btn-large darken-4 text-shadow mpl-add">
                         Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
-            </div>
+
         </form>
         </div>
    <div class="mpl-footnote-container">
-            <p class="mpl-login-newuser">
+            <p>
                 New Here?
                 <a href="{{ url_for('register') }}">Register for an Account</a>
             </p>

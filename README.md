@@ -41,13 +41,20 @@ As a Web-Based Administrator I want to be able to achieve all of the First Time 
 ### Design  
 #### Colour Scheme  
 The two main colours used are purple and white, but the artwork includes many shades in order to portray an authentic French-style restaurant.
-Typography
-The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.  Variety is provided with use of colours, letter spacing, shadows and varying font weights.
 
-Imagery
-Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
-Wireframes
-Home Page Wireframe - View
+#### Typography
+The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font, so it is both attractive and will work well for different screen sizes.  Variety is provided with use of colours, letter spacing, shadows and varying font weights.
+
+#### Imagery  
+The background imagery is important, and is visible throughout the site.  Low levels of transparency are used to help the main features blend naturally with the background image. The images is designed to portray an image of informal dining, with high-quality, well prepared food.
+
+# Wireframes
+
+Wireframes are created using the Evolus Pencil wireframe and prototyping tool [Evolus Pencil](https://pencil.evolus.vn/)
+
+## Home Page Wireframe
+
+- ![Desktop](project_files/wireframes/home_page_desktop.png)
 
 Mobile Wireframe - View
 

@@ -18,6 +18,28 @@
     letter-spacing: 2px;
 }
 
+.mpl-footnote-container p {
+    color: #fff;
+    font-weight: 700;
+    font-size: 150%;
+    letter-spacing: 3px;
+    background-color: #888888ee;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 1% 5%;
+}
+
+.mpl-footnote-container a {
+    margin: 0;
+    color: #005;
+}
+
+.mpl-footnote-container {
+    width: 50%;
+    margin: 5% auto;
+    text-align: center;
+}
+
 .mpl-button-icon {
     color: #fff;
 }
@@ -87,7 +109,6 @@
  margin: 0;
 }
 
-
 .flashes h4 {
     line-height: 2;
     border-width: 2px;
@@ -142,37 +163,6 @@ nav{
 /* End of Navigation */
 
 /* Start of Login*/
-
-.mpl-login-card {
-    border: 6px #fff ridge;
-    background-color: #ffffffee;
-    padding: 5%;
-    max-width: 600px;
-    margin: 3% auto;
-}
-
-.mpl-login-newuser {
-    color: #fff;
-    font-weight: 700;
-    font-size: 200%;
-    letter-spacing: 3px;
-    background-color: #888888ee;
-    border-radius: 10px;
-    padding: 1%;
-}
-
-.mpl-login-newuser a {
-    margin: 0;
-    color: #005;
-}
-
-.mpl-footnote-container {
-    width: 50%;
-    margin: 5% auto;
-}
-
-
-
 /* End of Login */
 
 /* Start of Profile Section */
@@ -182,7 +172,6 @@ nav{
     border-radius: 10px;
     background-color: #dddddddd;
     padding: 5%;
-    margin: auto;
     max-width: 600px;
     margin: 3% auto;
 }

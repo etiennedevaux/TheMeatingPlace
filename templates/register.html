@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="row mpl-card mpl-card-addrecipe lighten-5">
+    <div class="row mpl-card lighten-5">
         <h1>Register for an Account</h1>
         <form class="col s12" method="POST" action="{{ url_for('register') }}">
                 <!-- Start of Username -->
@@ -77,7 +77,7 @@
 
 
         <div class="mpl-footnote-container">
-            <p class="mpl-login-newuser">
+            <p>
                 Already Registered?
                 <a href="{{ url_for('login') }}">Log In</a>
             </p>
