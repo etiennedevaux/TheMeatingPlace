@@ -52,9 +52,13 @@ The background imagery is important, and is visible throughout the site.  Low le
 
 Wireframes are created using the Evolus Pencil wireframe and prototyping tool [Evolus Pencil](https://pencil.evolus.vn/)
 
-## Home Page Wireframe
+## Home Page / Recipe Page Wireframe
 
 - ![Desktop](project_files/wireframes/home_page_desktop.png)
+
+## Edit Recipe Page Wireframe
+
+- ![Desktop](project_files/wireframes/edit_recipe_page_desktop.png)
 
 ## Login Page Wireframe
 
@@ -68,6 +72,10 @@ Wireframes are created using the Evolus Pencil wireframe and prototyping tool [E
 
 - ![Desktop](project_files/wireframes/profile_page_desktop.png)
 
+## Edit Personal Profile Page Wireframe
+
+- ![Desktop](project_files/wireframes/edit_profile_page_desktop.png)
+
 ## New Recipe Page Wireframe
 
 - ![Desktop](project_files/wireframes/new_recipe_page_desktop.png)
@@ -76,9 +84,17 @@ Wireframes are created using the Evolus Pencil wireframe and prototyping tool [E
 
 - ![Desktop](project_files/wireframes/manage_categories_page_desktop.png)
 
+## Edit Categories Page Wireframe
+
+- ![Desktop](project_files/wireframes/edit_categories_page_desktop.png)
+
 ## Manage Users Page Wireframe
 
 - ![Desktop](project_files/wireframes/manage_users_page_desktop.png)
+
+## Edit User Page Wireframe
+
+- ![Desktop](project_files/wireframes/edit_user_page_desktop.png)
 
 Mobile Wireframe - View
 
@@ -225,3 +241,10 @@ Acknowledgements
 My Mentor for continuous helpful feedback.
 
 Tutor support at Code Institute for their support.
+
+
+# Future Developments
+
+Updated deprecated functionality
+
+Enhance security to prevent interpolation of URLs

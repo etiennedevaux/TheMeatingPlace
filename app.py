@@ -173,14 +173,14 @@ def edit_recipe(recipe_id):
 @app.route("/user_admin/<user_id>", methods=["GET", "POST"])
 def user_admin(user_id):
     data_refresh()
+    useradmin=mongo.db.users.find_one({"_id": ObjectId(user_id)}) 
     if request.method == "POST":
         submit = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password")),
-            "family_name": request.form.get("family-name"),
-            "given_name": request.form.get("given-name"),
+            "family_name": request.form.get("family_name"),
+            "given_name": request.form.get("given_name"),
             "about_me": request.form.get("about_me"),
-            "profile_image": request.form.get("profile-image")
+            "profile_image": request.form.get("profile_image")
         }
         mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
         flash("User Successfully Updated")
@@ -188,8 +188,8 @@ def user_admin(user_id):
         users=mongo.db.users.find()
         return render_template("users.html", users=users)
 
-    userprofile=mongo.db.users.find_one({"_id": ObjectId(user_id)})      
-    return render_template("user_admin.html", userprofile=userprofile)
+    useradmin=mongo.db.users.find_one({"_id": ObjectId(user_id)})      
+    return render_template("user_admin.html", useradmin=useradmin)
 
 @app.route("/edit_user/",  methods=["GET", "POST"])
 def edit_user():

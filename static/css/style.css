@@ -45,6 +45,11 @@
 }
 
 
+
+
+
+
+
 .mpl-delete {
     background-color: #ca0f0f;
 }
@@ -522,3 +527,42 @@ nav{
         opacity: 0;
       }
     }
+
+
+    /*MEDIA QUERIES FOR ACCESSIBILITY*/
+  /* For extra-wide 4k screens */
+  @media screen and (min-width: 2400px){
+    
+}
+/* Equivalent to Bootstrap Extra Extra Large */
+@media screen and (min-width: 2000px){
+  
+}
+
+/* Equivalent to Bootstrap Extra Large */
+@media screen and (max-width: 1999px){
+  
+}
+
+/* Equivalent to Bootstrap Large */
+@media screen and (max-width: 1199px){
+ 
+}
+
+/* Equivalent to Bootstrap Medium */
+@media screen and (max-width: 991px){
+
+}
+/* Equivalent to Bootstrap Small */
+@media screen and (max-width: 767px){
+
+}
+/* Equivalent to Bootstrap X-Small */
+@media screen and (max-width: 575px){
+
+}
+
+/* Large vertical breakpoint */
+@media screen and (max-height: 850px){
+
+}
