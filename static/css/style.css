@@ -2,6 +2,7 @@
 
 * {
     font-family: "Montserrat", sans-serif;
+    font-size: 12pt;
 }
 
 #mpl-flashes{
@@ -43,12 +44,6 @@
 .mpl-button-icon {
     color: #fff;
 }
-
-
-
-
-
-
 
 .mpl-delete {
     background-color: #ca0f0f;
@@ -172,9 +167,20 @@ nav{
     letter-spacing: 5px;
     text-shadow: 5px 3px #461b22;
     text-decoration: wavy;
-    font-size: 28pt;
+    font-size: 150%;
     margin-left: 20px;
     color: #ffffffdd;
+}
+
+.mpl-nav-heading-small {
+    line-height: 1;
+    padding: 0;
+}
+
+.mpl-nav-heading-small p{
+    line-height: 1;
+    padding: 0;
+    margin: 0;
 }
 
 /* End of Navigation */
@@ -335,9 +341,10 @@ nav{
     margin-top: 0;
 }
 
-.collapsible-header {
+.mpl-collapsible-header {
     width: 100%;
     background-color: #762b32f5;
+    display: flex;
 }
 
 .collapsible-body{
@@ -352,11 +359,13 @@ nav{
 .mpl-recipe-col-a {
     padding: 0px;
     margin: 0px;
+    width: 20%;
 }
 
 .mpl-recipe-col-b {
     padding: 0;
     margin: 0;
+    width: 25%;
 }
 
 .mpl-recipe-col-b h1{
@@ -376,10 +385,13 @@ nav{
 
 
 
-.mpl-recipe-col-c {}
+.mpl-recipe-col-c {
+    width: 45%;
+}
 
 .mpl-recipe-col-d {
     display: flex;
+    width: 10%;
 }
 
 .light-blue.darken-4 {
@@ -389,9 +401,7 @@ nav{
 .mpl-recipe-image{
     display: block;
     width: 80%;
-    max-height: 130px;
-    
-    
+    max-height: 130px;    
 }
 
 .mpl-recipe-image-overlay{
@@ -551,6 +561,24 @@ nav{
 
 /* Equivalent to Bootstrap Medium */
 @media screen and (max-width: 991px){
+    *  {
+        font-size: 10pt;
+       }
+    
+    .mpl-recipe-col-d img {
+        display: none;
+    }
+
+    .mpl-collapsible-header {
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+    }
+
+    .mpl-recipe-col-a {
+        align-content: center;
+        width: 80%;
+    }
 
 }
 /* Equivalent to Bootstrap Small */
@@ -559,7 +587,9 @@ nav{
 }
 /* Equivalent to Bootstrap X-Small */
 @media screen and (max-width: 575px){
-
+ *  {
+     font-size: 8pt;
+    }
 }
 
 /* Large vertical breakpoint */

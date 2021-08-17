@@ -1,4 +1,5 @@
   
+ 
 {% extends "base.html" %}
 {% block content %}
 
@@ -8,7 +9,7 @@
         {% for recipe in recipes  %}
         <li>
             <div class="row mpl-recipe-row">
-            <div class="collapsible-header white-text darken-4 text-shadow">
+            <div class="collapsible-header white-text darken-4 text-shadow mpl-collapsible-header">
                 <div class="col-2 s3 mpl-recipe-col-a">
                     <img class="mpl-recipe-image" src="{{recipe.recipe_image }}">
                     <div class="mpl-recipe-image-overlay">
