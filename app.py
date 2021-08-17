@@ -18,10 +18,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-def data_refresh():
+def data_refresh(flter):
     global categories, recipes
     categories = mongo.db.categories.find().sort("sequence", 1)
-    recipes = list(mongo.db.recipes.find({"upload_date":{"$ne": None}}).sort("upload_date", -1))
+    recipes = list(mongo.db.recipes.find(flter).sort("upload_date", -1))
    
     for recipe in recipes:
         recipe['family_name']=mongo.db.users.find_one({"username": recipe["created_by"]})["family_name"]
@@ -37,10 +37,20 @@ def not_found(e):
 
 
 @app.route("/")
-@app.route("/get_recipes")
+@app.route("/get_recipes/")
 def get_recipes():
-    data_refresh()
-    return render_template("recipes.html", recipes=recipes)
+    data_refresh({"upload_date":{"$ne": None}})
+    return render_template("recipes.html", recipes=recipes, categories=categories)
+
+@app.route("/get_filtered_recipes", methods=["GET", "POST"])
+def get_filtered_recipes():
+    cat_fil = request.form.get("category_filter")
+    if cat_fil == "All":
+        dataqry={"upload_date":{"$ne": None}}
+    else:
+        dataqry={"$and": [{"upload_date":{"$ne": None}},{"category_name":str(cat_fil)}]}
+    data_refresh(dataqry)
+    return render_template("recipes.html", recipes=recipes, categories=categories)
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -80,7 +90,7 @@ def register():
 def login():
     if request.method == "POST":
         # check if username exists in db
-        existing_user = mongo.db.users.find_one(
+        existing_user = mongo.db.users.find_one_or_404(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
@@ -108,7 +118,7 @@ def profile():
     # grab the session user's username from db
     
     if  "user" in session:
-        userprofile = mongo.db.users.find_one({"username": session["user"]})
+        userprofile = mongo.db.users.find_one_or_404({"username": session["user"]})
         return render_template("profile.html", userprofile=userprofile)
 
     return redirect(url_for("login"))
@@ -124,7 +134,7 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    data_refresh()
+    data_refresh({"upload_date":{"$ne": None}})
     if request.method == "POST":
         
         recipe = {
@@ -138,7 +148,7 @@ def add_recipe():
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
-        data_refresh()
+        data_refresh({"upload_date":{"$ne": None}})
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
 
@@ -148,7 +158,11 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    data_refresh()
+    if "user" not in session:
+        return redirect(url_for("login"))
+
+    recipe = mongo.db.recipes.find_one_or_404({"_id": ObjectId(recipe_id)})
+    data_refresh({"upload_date":{"$ne": None}})
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -163,16 +177,16 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
-        data_refresh()
+        data_refresh({"upload_date":{"$ne": None}})
         return render_template("recipes.html", recipes=recipes, categories=categories)
         
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    
     
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
 @app.route("/user_admin/<user_id>", methods=["GET", "POST"])
 def user_admin(user_id):
-    data_refresh()
+    data_refresh({"upload_date":{"$ne": None}})
     useradmin=mongo.db.users.find_one({"_id": ObjectId(user_id)}) 
     if request.method == "POST":
         submit = {
@@ -184,7 +198,7 @@ def user_admin(user_id):
         }
         mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
         flash("User Successfully Updated")
-        data_refresh()
+        data_refresh({"upload_date":{"$ne": None}})
         users=mongo.db.users.find()
         return render_template("users.html", users=users)
 
@@ -196,7 +210,7 @@ def edit_user():
 
     # grab the session user's username from db
     userprofile = mongo.db.users.find_one({"username": session["user"]})
-    data_refresh()
+    data_refresh({"upload_date":{"$ne": None}})
     if request.method == "POST":
         submit = {"$set":{
             "given_name": request.form.get("given_name"),
@@ -209,7 +223,7 @@ def edit_user():
         mongo.db.users.update_one({"username": session["user"]}, submit)
         flash("Profile Successfully Updated")
         userprofile = mongo.db.users.find_one({"username": session["user"]})
-        data_refresh()
+        data_refresh({"upload_date":{"$ne": None}})
         return render_template("profile.html", userprofile=userprofile)
         
     return render_template("edit_user.html",userprofile=userprofile)
@@ -254,7 +268,7 @@ def add_category():
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
-    data_refresh()
+    data_refresh({"upload_date":{"$ne": None}})
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name")
