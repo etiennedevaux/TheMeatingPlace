@@ -53,55 +53,110 @@ The background imagery is important, and is visible throughout the site.  Low le
 Wireframes are created using the Evolus Pencil wireframe and prototyping tool [Evolus Pencil](https://pencil.evolus.vn/)
 
 ## Home Page / Recipe Page Wireframe
+Desktop  
+![Desktop](project_files/wireframes/home_page_desktop.png)
+Tablet  
+![Tablet](project_files/wireframes/home_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/home_page_mobile.png)  
 
-- ![Desktop](project_files/wireframes/home_page_desktop.png)
+## Login Page Wireframes  
+Desktop  
+![Desktop](project_files/wireframes/login_page_desktop.png)
+Tablet  
+![Tablet](project_files/wireframes/login_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/login_page_mobile.png)
 
-## Edit Recipe Page Wireframe
+## Edit Recipe Page Wireframe  
+Desktop  
+![Desktop](project_files/wireframes/edit_recipe_page_desktop.png)  
+Tablet  
+![Tablet](project_files/wireframes/edit_recipe_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/edit_recipe_page_mobile.png)
 
-- ![Desktop](project_files/wireframes/edit_recipe_page_desktop.png)
 
-## Login Page Wireframe
-
-- ![Desktop](project_files/wireframes/login_page_desktop.png)
 
 ## Register Page Wireframe
+Desktop  
+![Desktop](project_files/wireframes/register_page_desktop.png)  
+Tablet  
+![Tablet](project_files/wireframes/register_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/register_page_mobile.png)
 
-- ![Desktop](project_files/wireframes/register_page_desktop.png)
-
-## Profile Page Wireframe
-
-- ![Desktop](project_files/wireframes/profile_page_desktop.png)
+## Profile Page Wireframe  
+Desktop  
+![Desktop](project_files/wireframes/profile_page_desktop.png)  
+Tablet  
+![Tablet](project_files/wireframes/profile_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/profile_page_mobile.png)
 
 ## Edit Personal Profile Page Wireframe
-
-- ![Desktop](project_files/wireframes/edit_profile_page_desktop.png)
+Desktop
+![Desktop](project_files/wireframes/edit_profile_page_desktop.png)  
+Tablet  
+![Tablet](project_files/wireframes/edit_profile_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/edit_profile_page_mobile.png)
 
 ## New Recipe Page Wireframe
-
-- ![Desktop](project_files/wireframes/new_recipe_page_desktop.png)
+Desktop  
+![Desktop](project_files/wireframes/new_recipe_page_desktop.png)  
+Tablet  
+![Tablet](project_files/wireframes/new_recipe_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/new_recipe_page_mobile.png)
 
 ## Manage Categories Page Wireframe
 
-- ![Desktop](project_files/wireframes/manage_categories_page_desktop.png)
+Desktop  
+![Desktop](project_files/wireframes/manage_categories_page_desktop.png)  
+Tablet  
+![Tablet](project_files/wireframes/manage_categories_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/manage_categories_page_mobile.png)
 
 ## Edit Categories Page Wireframe
 
-- ![Desktop](project_files/wireframes/edit_categories_page_desktop.png)
+Desktop  
+![Desktop](project_files/wireframes/edit_category_page_desktop.png)  
+Tablet  
+![Tablet](project_files/wireframes/edit_category_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/edit_category_page_mobile.png)
 
 ## Manage Users Page Wireframe
 
-- ![Desktop](project_files/wireframes/manage_users_page_desktop.png)
+Desktop  
+![Desktop](project_files/wireframes/manage_users_page_desktop.png)  
+Tablet  
+![Tablet](project_files/wireframes/manage_users_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/manage_users_page_mobile.png)
+
 
 ## Edit User Page Wireframe
 
-- ![Desktop](project_files/wireframes/edit_user_page_desktop.png)
+Desktop  
 
-Mobile Wireframe - View
+![Desktop](project_files/wireframes/edit_user_page_desktop.png)  
+Tablet  
+![Tablet](project_files/wireframes/edit_user_page_tablet.png)  
+Mobile    
+![Mobile](project_files/wireframes/edit_user_page_mobile.png)
 
-Contact Us Page Wireframe - View
 
-Features
+## Features
 Responsive on all device sizes
+
+Deafults to 404 page if a URL does not exist and on errors where a find query returns no results
+
+The 404 page gives clear feedback to the user, and after a short delay, will redirect to the home page.  The Home Page can be selected sooner.
+
+The search filter is a drop down, select box, which is only populated with categories that have been associated with a menu
 
 Interactive elements
 

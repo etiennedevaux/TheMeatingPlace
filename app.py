@@ -41,7 +41,6 @@ def not_found(e):
 @app.route("/get_recipes/")
 def get_recipes():
     data_refresh({"upload_date":{"$ne": None}})
-    
     return render_template("recipes.html", recipes=recipes, categoriesinuse=categoriesinuse)
 
 @app.route("/get_filtered_recipes", methods=["GET", "POST"])
@@ -52,8 +51,6 @@ def get_filtered_recipes():
     else:
         dataqry={"$and": [{"upload_date":{"$ne": None}},{"category_name":str(cat_fil)}]}
     data_refresh(dataqry)
-    categoriesinuse = mongo.db.recipes.distinct('category_name')
-    print(categoriesinuse)
     return render_template("recipes.html", recipes=recipes, categoriesinuse=categoriesinuse)
 
 @app.route("/search", methods=["GET", "POST"])

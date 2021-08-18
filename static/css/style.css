@@ -445,11 +445,13 @@ nav{
     letter-spacing: 3px;
 }
 
-.mpl-recipe-heading,.mpl-filter-field {
+.mpl-recipe-heading, .mpl-filter-field {
     float: left;
 }
 
-.mpl-category-filter {}
+.mpl-recipe-heading h1 {
+    font-size: 180%;
+}
 
 .mpl-filter-label, .mpl-filter-select, .mpl-filter-button {
     margin: auto;
