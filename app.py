@@ -19,8 +19,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 def data_refresh(flter):
-    global categories, recipes
+    global categories, recipes, categoriesinuse
     categories = mongo.db.categories.find().sort("sequence", 1)
+    categoriesinuse = mongo.db.recipes.distinct('category_name')
     recipes = list(mongo.db.recipes.find(flter).sort("upload_date", -1))
    
     for recipe in recipes:
@@ -40,7 +41,8 @@ def not_found(e):
 @app.route("/get_recipes/")
 def get_recipes():
     data_refresh({"upload_date":{"$ne": None}})
-    return render_template("recipes.html", recipes=recipes, categories=categories)
+    
+    return render_template("recipes.html", recipes=recipes, categoriesinuse=categoriesinuse)
 
 @app.route("/get_filtered_recipes", methods=["GET", "POST"])
 def get_filtered_recipes():
@@ -50,7 +52,9 @@ def get_filtered_recipes():
     else:
         dataqry={"$and": [{"upload_date":{"$ne": None}},{"category_name":str(cat_fil)}]}
     data_refresh(dataqry)
-    return render_template("recipes.html", recipes=recipes, categories=categories)
+    categoriesinuse = mongo.db.recipes.distinct('category_name')
+    print(categoriesinuse)
+    return render_template("recipes.html", recipes=recipes, categoriesinuse=categoriesinuse)
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -178,7 +182,7 @@ def edit_recipe(recipe_id):
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
         data_refresh({"upload_date":{"$ne": None}})
-        return render_template("recipes.html", recipes=recipes, categories=categories)
+        return render_template("recipes.html", recipes=recipes, categoriesinuse=categoriesinuse)
         
     
     

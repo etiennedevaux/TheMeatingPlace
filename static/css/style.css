@@ -431,8 +431,6 @@ nav{
     border-radius: 10px;
 }
 
-
-
 .mpl-recipe-profile {
     display: none;
     width: 100%;
@@ -451,6 +449,11 @@ nav{
     float: left;
 }
 
+.mpl-category-filter {}
+
+.mpl-filter-label, .mpl-filter-select, .mpl-filter-button {
+    margin: auto;
+}
 
 /* End of Recipes */
 

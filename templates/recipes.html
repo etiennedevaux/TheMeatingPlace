@@ -4,21 +4,30 @@
 {% block content %}
 
 <div class="row mpl-heading">
-    <div class=" mpl-recipe-heading col-lg-8 col-12">
+    <div id="mpl-category-filter" class="mpl-recipe-heading col-lg-7 col-12">
         <h3>Shared Recipes</h3>
     </div>
-    <div class="mpl-filter-field input-field col-lg-4 col-12">
+    <div class="mpl-filter-field input-field col-lg-5 col-12">
         <form class="col s12" method="POST" action="{{ url_for('get_filtered_recipes') }}">
-        <i class="fas fa-folder-open prefix text-darken-4"></i>
-        <select id="category_filter" name="category_filter">
-            <option value="All" selected>All</option>
-            {% for category in categories %}
-                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-            {% endfor %}
-        </select>
-        <label for="category_name">Recipe Category</label>
-        <button type="submit">Search</button>
-    </form>
+            <div class="row">
+                <div class="col-3 mpl-filter-label">
+                    <label for="category_name">Recipe Filter</label>
+                </div>
+                <div class="col-6 mpl-filter-select">
+                    <i class="fas fa-folder-open prefix text-darken-4"></i>
+                    <select id="category_filter" name="category_filter">
+                        <option value="All" selected>All</option>
+                        {% for category in categoriesinuse %}
+                            <option value="{{ category }}">{{ category }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="col-3 mpl-filter-button">
+                    <button type="submit">Apply</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
