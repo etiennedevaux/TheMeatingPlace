@@ -1,6 +1,6 @@
 # The Meating Place Website
 
-## Project Websites
+## 1. Project Websites
 
 View the live project here:  
 - [The Meating Place](https://the-meating-place.herokuapp.com/)  
@@ -12,7 +12,7 @@ Visit the Project Website and Shared Resource Area Here:
 
 This is the GitHub project area for people to collaborate, contribute and to download or share code for other projects.
 
-## User Experience (UX)
+## 2. User Experience (UX)
 ### User stories
 
 #### First Time Visitor Goals
@@ -48,11 +48,11 @@ The Montserrat font is the main font used throughout the whole website with Sans
 #### Imagery  
 The background imagery is important, and is visible throughout the site.  Low levels of transparency are used to help the main features blend naturally with the background image. The images is designed to portray an image of informal dining, with high-quality, well prepared food.
 
-# Wireframes
+## 3. Wireframes
 
 Wireframes are created using the Evolus Pencil wireframe and prototyping tool [Evolus Pencil](https://pencil.evolus.vn/)
 
-## Home Page / Recipe Page Wireframe
+### Home Page / Recipe Page Wireframe
 Desktop  
 ![Desktop](project_files/wireframes/home_page_desktop.png)
 Tablet  
@@ -60,7 +60,7 @@ Tablet
 Mobile    
 ![Mobile](project_files/wireframes/home_page_mobile.png)  
 
-## Login Page Wireframes  
+### Login Page Wireframes  
 Desktop  
 ![Desktop](project_files/wireframes/login_page_desktop.png)
 Tablet  
@@ -68,7 +68,7 @@ Tablet
 Mobile    
 ![Mobile](project_files/wireframes/login_page_mobile.png)
 
-## Edit Recipe Page Wireframe  
+### Edit Recipe Page Wireframe  
 Desktop  
 ![Desktop](project_files/wireframes/edit_recipe_page_desktop.png)  
 Tablet  
@@ -76,9 +76,7 @@ Tablet
 Mobile    
 ![Mobile](project_files/wireframes/edit_recipe_page_mobile.png)
 
-
-
-## Register Page Wireframe
+### Register Page Wireframe
 Desktop  
 ![Desktop](project_files/wireframes/register_page_desktop.png)  
 Tablet  
@@ -86,7 +84,7 @@ Tablet
 Mobile    
 ![Mobile](project_files/wireframes/register_page_mobile.png)
 
-## Profile Page Wireframe  
+### Profile Page Wireframe  
 Desktop  
 ![Desktop](project_files/wireframes/profile_page_desktop.png)  
 Tablet  
@@ -94,7 +92,7 @@ Tablet
 Mobile    
 ![Mobile](project_files/wireframes/profile_page_mobile.png)
 
-## Edit Personal Profile Page Wireframe
+### Edit Personal Profile Page Wireframe
 Desktop
 ![Desktop](project_files/wireframes/edit_profile_page_desktop.png)  
 Tablet  
@@ -102,7 +100,7 @@ Tablet
 Mobile    
 ![Mobile](project_files/wireframes/edit_profile_page_mobile.png)
 
-## New Recipe Page Wireframe
+### New Recipe Page Wireframe
 Desktop  
 ![Desktop](project_files/wireframes/new_recipe_page_desktop.png)  
 Tablet  
@@ -110,8 +108,7 @@ Tablet
 Mobile    
 ![Mobile](project_files/wireframes/new_recipe_page_mobile.png)
 
-## Manage Categories Page Wireframe
-
+### Manage Categories Page Wireframe
 Desktop  
 ![Desktop](project_files/wireframes/manage_categories_page_desktop.png)  
 Tablet  
@@ -119,8 +116,7 @@ Tablet
 Mobile    
 ![Mobile](project_files/wireframes/manage_categories_page_mobile.png)
 
-## Edit Categories Page Wireframe
-
+### Edit Categories Page Wireframe
 Desktop  
 ![Desktop](project_files/wireframes/edit_category_page_desktop.png)  
 Tablet  
@@ -128,8 +124,7 @@ Tablet
 Mobile    
 ![Mobile](project_files/wireframes/edit_category_page_mobile.png)
 
-## Manage Users Page Wireframe
-
+### Manage Users Page Wireframe
 Desktop  
 ![Desktop](project_files/wireframes/manage_users_page_desktop.png)  
 Tablet  
@@ -137,58 +132,138 @@ Tablet
 Mobile    
 ![Mobile](project_files/wireframes/manage_users_page_mobile.png)
 
-
-## Edit User Page Wireframe
-
+### Edit User Page Wireframe
 Desktop  
-
 ![Desktop](project_files/wireframes/edit_user_page_desktop.png)  
 Tablet  
 ![Tablet](project_files/wireframes/edit_user_page_tablet.png)  
 Mobile    
 ![Mobile](project_files/wireframes/edit_user_page_mobile.png)
 
+## 4. Features
+Responsive design, ensuring a high-quality user experience on all device sizes.
 
-## Features
-Responsive on all device sizes
+Consistent design of user controls across the site.
 
-Deafults to 404 page if a URL does not exist and on errors where a find query returns no results
+Defaults to a well designed 404 page, providing user feedback if a URL does not exist and on errors where a find query returns no results.
 
-The 404 page gives clear feedback to the user, and after a short delay, will redirect to the home page.  The Home Page can be selected sooner.
+
 
 The search filter is a drop down, select box, which is only populated with categories that have been associated with a menu
+Testing
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
-Interactive elements
+### 4.1 Navigation Bar and Background Image  
 
-Technologies Used
+The Navigation Bar appears throughout the user journey on the site, ensuring that users always have rapid navigation across and around the site.
+
+The Navigation Bar itself is responsive, so that it changes with screen sizes to adapt to different devices.  The options appearing on the navigation bar vary in accordance with whether the user is new, registered and logged in or logged in as an administrator.
+
+The colour scheme reflects the background image, which also appears throughout the site.
+
+### 4.2 Home Page / Recipes Page
+
+The home page and recipes page are the same.  The purpose of the site is immediately clear, and does not warrant distracting information.  This page is visible to all users, the features within it change in accordance with whether or not the user is logged in and whether or not they are the owner of the recipes.
+
+The Recipes are listed in reverse order of when they were added or last modified.
+
+#### 4.2.1 Recipe Information
+
+The recipe information appears firstly in a long list with a summary.  That summary contains an image, a title, a description and information about the creator.
+
+An arrow on the image indicates that the user should click for more information, in fact they can click on any part of the recipe row.  When they do this information about the Ingredients, Equipment and Cooking Instructions appear.
+
+If the person logged in was the creator of the recipe then an Edit button will appear, clicking on this will take the user to the Edit Recipe page.
+
+With a second click, that additional information disappears.
+
+#### 4.2.2 Recipe Creator Information
+
+The name of the creator and their image appear by default.  When the mouse is over the image then user profile information replaces the recipe description.  When the mouse is moved away this reverts.
+
+For small devices, such as mobile devices, the creator image disappears to prioritise the recipe information.
+
+#### 4.2.3 Recipe Filters
+
+The recipes can be filtered by the Course Category (e.g. Main, Dessert, Starter etc).
+
+The data query is designed to only show the categories that have been used plus the 'All', so that a zero return will not happen.  Categories can, therefore, be available to users creating new recipes, but until they are used they will not appear in the dropdown.
+
+The backend Python handles the All option so that the recipes are not filtered.
+
+The dropdown defaults to 'All', and returns to 'All' when a filter is applied - this gives a single click to clear the filter.
+
+### 4.3 Register Page
+
+
+
+
+
+### Login Page
+
+### Profile Page
+
+### Edit Profile Page
+
+### New Recipe Page
+
+### Edit Recipe Page
+
+### Manage Categories Page
+
+### Edit Category Page
+
+### Manage Users Page
+
+### Edit User Page
+
+## 5. Technologies Used
+
 Languages Used
+
 HTML5
 CSS3
-Frameworks, Libraries & Programs Used
-Bootstrap 4.4.1:
+Javascript
+Python
+
+Flask
+
+Jinja
+
+Bootstrap 5.1.0:
 Bootstrap was used to assist with the responsiveness and styling of the website.
-Hover.css:
-Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
-Google Fonts:
-Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
 Font Awesome:
 Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
-jQuery:
-jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
+Materialize 1.0.0
+
+
+jQuery 3.5.1:
+
 Git
 Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 GitHub:
 GitHub is used to store the projects code after being pushed from Git.
-Photoshop:
-Photoshop was used to create the logo, resizing images and editing photos for the website.
-Balsamiq:
+Microsoft Photo Editor
+Photo Editor resizing images and editing photos for the website.
+Pencil:
 Balsamiq was used to create the wireframes during the design process.
-Testing
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+Interactive elements
+
+Visual Studio Code
+
+Mongo DB
+
+Heroku
+
+
+
+
 
 W3C Markup Validator - Results
 W3C CSS Validator - Results
-Testing User Stories from User Experience (UX) Section
+
+## 6. Testing User Stories from User Experience (UX) Section
+The 404 page gives clear feedback to the user, and after a short delay, will redirect to the home page.  The Home Page can be selected sooner.
 First Time Visitor Goals
 As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
 
@@ -243,7 +318,7 @@ Known Bugs
 On some mobile devices the Hero Image pushes the size of screen out more than any of the other content on the page.
 A white gap can be seen to the right of the footer and navigation bar as a result.
 On Microsoft Edge and Internet Explorer Browsers, all links in Navbar are pushed upwards when hovering over them.
-Deployment
+## 7. Deployment
 GitHub Pages
 The project was deployed to GitHub Pages using the following steps...
 
@@ -277,7 +352,14 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 > Unpacking objects: 100% (10/10), done.
 Click Here to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
-Credits
+## 8 Data Structure
+
+### 8.1 Entity Relationship Diagram  
+Entity Relationship Diagram  
+![Entity Relationship Diagram](project_files/data_planning/erd.png)
+
+
+## 8. Credits
 Code
 The full-screen hero image code came from this StackOverflow post
 
@@ -298,8 +380,14 @@ My Mentor for continuous helpful feedback.
 Tutor support at Code Institute for their support.
 
 
-# Future Developments
+## 9. Future Developments
 
 Updated deprecated functionality
 
 Enhance security to prevent interpolation of URLs
+
+Extend search capabilities
+
+User Dashboard
+
+Recipe stories

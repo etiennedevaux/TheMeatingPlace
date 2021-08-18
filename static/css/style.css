@@ -457,6 +457,12 @@ nav{
     margin: auto;
 }
 
+.mpl-filter-button button {
+    background-color: #762b32;
+    color: #fff;
+    font-weight: 600;
+}
+
 /* End of Recipes */
 
 
