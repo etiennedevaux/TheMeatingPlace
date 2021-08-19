@@ -122,6 +122,10 @@
  margin: 0;
 }
 
+#mpl-flashes h2 {
+    display: none;
+}
+
 .flashes h4 {
     line-height: 2;
     border-width: 2px;
@@ -391,15 +395,19 @@ nav{
     background-color: #01579bf5 !important;
 }
 
-.mpl-recipe-image{
+.mpl-recipe-image {
     display: block;
     width: 80%;
-    max-height: 130px;    
+    align-content: center;
+    margin: auto;
+    max-height: 120px;
+    max-width: 400px;    
 }
 
-.mpl-recipe-image-overlay{
+.mpl-recipe-image-overlay {
     position: absolute;
     top: 0;
+    left: 7%;
 }
 
 .collapsible-body h1 {
@@ -590,13 +598,6 @@ nav{
         text-align: center;
     }
 
-    .mpl-recipe-image {
-        align-content: center;
-        width: none;
-        margin: auto;
-        max-height: 200px;
-        max-width: 400px;
-    }
     .collapsible-body {
         padding: 5px 0;
     }

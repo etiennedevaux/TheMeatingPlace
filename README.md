@@ -254,7 +254,7 @@ The new category is typed in, once posted the addition is confirmed in the Flash
 The page is prepopulated with the selected category.
 Changes are typed in, once posted the change is confirmed in the Flash Messages window and the user returned to the Manage Categories Page
 
-### 4.1.2 Manage Users Page
+### 4.12 Manage Users Page
 
 The Manage Users page is only available to the admin user.
 
@@ -262,7 +262,7 @@ All users are listed with username, given name and family name.
 
 Users can be edited or deleted.
 
-### Edit User Page
+### 4.13 Edit User Page
 
 The Edit User page is only available to the admin user.
 
@@ -270,7 +270,7 @@ username, given and first names, about me section and the profile image can be u
 
 Once submitted the action is confirmed and the user returned to the Manage Users Page.
 
-### Log Out
+### 4.14 Log Out
 
 When the log out option is selected the action is confirmed via the Flash Messages section
 
@@ -278,107 +278,234 @@ The user is returned to the Login Page
 
 ## 5. Technologies Used
 
-Languages Used
+### 5.1 Web Front End Technologies
+HTML5  
+CSS3  
+Javascript  
 
-HTML5
-CSS3
-Javascript
+### 5.2 Web Backend Technologies
 Python
-
 Flask
-
 Jinja
 
-Bootstrap JS 5.1.0:
-Bootstrap CSS 4.1.3 (to avoid presentation issues due to change in use of relative position)
-Bootstrap was used to assist with the responsiveness and styling of the website.
-Font Awesome:
-Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
-Materialize 1.0.0
+### 5.3 External Libraries  
 
-
-jQuery 3.5.1:
+Bootstrap JS 5.1.0:  
+Bootstrap CSS 4.1.3 (to avoid presentation issues due to change in use of relative position)  
+- Bootstrap was used to assist with the responsiveness and styling of the website.  
+Font Awesome:  
+- Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.  
+Materialize 1.0.0  
+- Used to assist with the responsiveness  
+jQuery 3.5.1:  
 
 Git
-Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-GitHub:
-GitHub is used to store the projects code after being pushed from Git.
+- Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+GitHub
+- GitHub is used to store the projects code after being pushed from Git.
 Microsoft Photo Editor
-Photo Editor resizing images and editing photos for the website.
+- Photo Editor resizing images and editing photos for the website.
 Pencil:
-Balsamiq was used to create the wireframes during the design process.
-Interactive elements
+- Pencil was used to create the wireframes during the design process.
 
 Visual Studio Code
+- Used as a the primary file editor
+- User to run and maintain the local Python and Flask environments
 
 Mongo DB
+- Used as the backend database
 
 Heroku
+- Used as the cloud platform to run Python and Flask, with connectivity to MongoDB for web-based access
 
 
 
 
+## 6 Validator Results
 
-W3C Markup Validator - Results
-W3C CSS Validator - Results
+### 6.1 W3C Markup Validator - Results
 
-## 6. Testing User Stories from User Experience (UX) Section
+Each page will be navigated to and checked in the same browser to ensure no permission issues
+
+- Home Page / Recipes Page - Pass
+- Register Page - Pass
+- Login Page - Pass
+- Profile Page - Pass
+- Edit Profile Page - Pass
+- New Recipe Page - Pass
+- Edit Recipe Page - Pass
+- Manage Categories Page - Pass  
+- Add New Category Page - Pass
+- Edit Category Page - Pass
+- Manage Users Page - Pass
+- Edit User Page - Pass
+- 404 Page - Pass
+
+### 6.2 W3C CSS Validator - Results
+
+- style.css - Pass
+
+## 7. Testing User Stories from User Experience (UX) Section
 The 404 page gives clear feedback to the user, and after a short delay, will redirect to the home page.  The Home Page can be selected sooner.
-First Time Visitor Goals
-As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
 
-Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the page of their choice. Underneath there is a Hero Image with Text and a "Learn More" Call to action button.
-The main points are made immediately with the hero image
-The user has two options, click the call to action buttons or scroll down, both of which will lead to the same place, to learn more about the organisation.
-As a First Time Visitor, I want to be able to easily be able to navigate throughout the site to find content.
+### 7.1 General Error Handling
 
-The site has been designed to be fluid and never to entrap the user. At the top of each page there is a clean navigation bar, each link describes what the page they will end up at clearly.
-At the bottom of the first 3 pages there is a redirection call to action to ensure the user always has somewhere to go and doesn't feel trapped as they get to the bottom of the page.
-On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
-As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their following on social media to determine how trusted and known they are.
+- Go to the Home Page
+- Add an extra digit in the url bar to create an invalid url
 
-Once the new visitor has read the About Us and What We Do text, they will notice the Why We are Loved So Much section.
-The user can also scroll to the bottom of any page on the site to locate social media links in the footer.
-At the bottom of the Contact Us page, the user is told underneath the form, that alternatively they can contact the organisation on social media which highlights the links to them.
-Returning Visitor Goals
-As a Returning Visitor, I want to find the new programming challenges or hackathons.
+When the invalid URL is entered, or other errors as handled by the Python app - such as zero data returns, the 404 page should be shown.
+Select the link - Click Here For the Starting Page
+The Home Page should now be loaded
 
-These are clearly shown in the banner message.
-They will be directed to a page with another hero image and call to action.
-As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
+Repeat the steps and wait for the automatic return to the Home Page.
 
-The navigation bar clearly highlights the "Contact Us" Page.
-Here they can fill out the form on the page or are told that alternatively they can message the organisation on social media.
-The footer contains links to the organisations Facebook, Twitter and Instagram page as well as the organization's email.
-Whichever link they click, it will be open up in a new tab to ensure the user can easily get back to the website.
-The email button is set up to automatically open up your email app and autofill there email address in the "To" section.
-As a Returning Visitor, I want to find the Facebook Group link so that I can join and interact with others in the community.
+### 7.2 First Time Visitor Goals
+As a First Time Visitor I want to:
+- quickly see a range of the recipes that have been contributed.
+- be able to browse the recipes that have already been uploaded.
+- be able to view recipe ingredients, equipment and instructions for a selected recipe.
+- be able to see a brief profile of the person who uploaded the recipe.
+- be able to filter for recipes of a particular category
 
-The Facebook Page can be found at the footer of every page and will open a new tab for the user and more information can be found on the Facebook page.
-Alternatively, the user can scroll to the bottom of the Home page to find the Facebook Group redirect card and can easily join by clicking the "Join Now!" button which like any external link, will open in a new tab to ensure they can get back to the website easily.
-If the user is on the "Our Favourites" page they will also be greeted with a call to action button to invite the user to the Facebook group. The user is incentivized as they are told there is a weekly favourite product posted in the group.
-Frequent User Goals
-As a Frequent User, I want to check to see if there are any newly added challenges or hackathons.
+To ensure these goals are met, carry out the tests below
 
-The user would already be comfortable with the website layout and can easily click the banner message.
-As a Frequent User, I want to check to see if there are any new blog posts.
+- Load the Home Page  
+> 1. Home, Log In and Register should be visible to the right of the Nav bar
 
-The user would already be comfortable with the website layout and can easily click the blog link
-As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
+- Scroll Up and Down  
+> 1. The Recipe List, assuming it is longer than a page, should scroll up and down.
+> 2. For each recipe there should be an image of the recipe, title, creator and a short description
 
-At the bottom of every page their is a footer which content is consistent throughout all pages.
-To the right hand side of the footer the user can see "Subscribe to our Newsletter" and are prompted to Enter their email address.
-There is a "Submit" button to the right hand side of the input field which is located close to the field and can easily be distinguished.
-Further Testing
+- Click on any part of the Recipe row  
+> 1. Ingredients, equipment and instructions should show
+> 2. Click again on the recipe row and these should disappear
+
+- Move the mouse over the image of the Recipe Creator
+> 1. The recipe description should be replaced by the About Me section of the recipe creator
+> 2. When the mouse is moved away the Recipe Description should once again be visible
+
+- Find the Apply Button next to the Recipe Filter
+> 1. Click on the Apply button with the default value 'All' - this should show all recipes, which is probably no change
+> 2. Now select one of the other options, e.g. Main Course (only the Categories that are in use will be available) and click Apply
+> 3. Check that only Main Course recipes should be showing
+> 4. Click Apply again and All recipes should be showing
+
+#### Returning Visitor Goals
+
+As a Returning Visitor I want to be able to achieve all of the First Time Visitor goals and also want to:
+- be able to register as a user and create my own profile.
+- be able to create and save my own recipes.
+
+To ensure these goals are met, carry out the tests below
+
+- Register Page
+> 1. Go to the Home Page
+> 2. Click on the 'Register' option should display at the top right hand of the Nav bar
+> 3. The Register Page serves the simple purpose of allowing new users to register an account.
+> 4. Enter details as per the headings, all fields are completed by the user typing (try creating a Test User, with a Username testuser or similar, enter a URL for the profile image, perhaps the image from one of your own social media pages, or enter the following https://the-meating-place.herokuapp.com/static/images/test_recipe.jpg)
+> 5. Click the Register button that posts the content to the Flask App, which creates the relevant document in the MongoDB database.
+> 6. Check that once the registration is posted the user is given a confirmation in the Flash Message area and then logged in with their new credentials
+> 7. Check that you have been directed to the personal profile page for the Test User.
+> 8. Log out
+> 9. Try to register with the same username, as the username already exists the user is given a message to that effect in the Flash Message area and then directed to a blank registration page.
+
+- Login Page
+> 1. Login as the Test User you have created
+> 2. You should see a Welcome message is shown in the Flash Messages area
+> 3. You should be directed to the Personal Profile for the Test User
+
+- Profile Page
+> 1. Check that your Given and Family names are showing correctly.
+> 2. Check that the image you selected is showing
+> 3. Check that your About Me text is showing
+> 4. At the top left of the image there should be an Edit button
+> 5. Select Home to go back to the Home Page
+> 6. Select Profile to see that the correct profile page is showing
+
+- New Recipe Page
+> 1. Click on New Recipe (this will only be visible when you are logged in)
+> 2. Select a Menu Category from the dropdown. in this case try Amuse Gueule
+> 3. Put entries into the other text fields
+> 4. For the Recipe Image enter the URL https://the-meating-place.herokuapp.com/static/images/test_recipe.jpg
+> 5. Click Add Recipe
+> 6. Check that you receive a confirmation in the Flash Messages area
+> 7. You should be redirected to the Home Page
+> 8. Recipes are ordered by the date on which they are uploaded, your recipe should appear at (or near if other recipes have been entered that day) the top
+
+- Log Out
+> 1. Click on the Log Out at the right hand side of the Nav bar
+> 2. You should receive confirmation via the Flash Messages section
+> 3. You should be directed to the Log In screen
+
+#### Registered User Goals
+As a Registered User I want to achieve all of the First Time Visitor and Returning Visitor goals and also want to:
+- be able to edit my user profile.
+- be able to update and delete my own recipes.
+
+To ensure these goals are met, carry out the tests below
+
+- Edit Profile Page
+> 1. From the Home Page select the Log In option
+> 2. Log In as the Test User you previously created
+> 3. You should now see yoru personal Profile Page, with an Edit button.  Click on Edit
+> 4. Add a sentence to the About Me section
+> 5. Click on Update Profile
+> 6. Check that your sentence has been added.
+
+- Edit Recipe Page
+> 1. Ensure that you are still logged in as the testuser
+> 2. Go to the Home Page
+> 3. Click on the Test Recipe
+> 4. At the top of the Recipe Details you should see an Edit button, click on the Edit button
+> 5. Check that the form is populated with the existing information for that recipe
+> 6. Add an ingredient
+> 7. Select Update Recipe
+> 8. You should now be redirected to the Recipes page, click on the Test Recipe and check that your ingredient has been added
+> 9. Click on Edit
+> 10. Click Delete, and check that a confirmation shows, Confirm Deletion
+> 11. Check that the Test Recipe has gone
+
+#### Web-Based Administrator
+As a Web-Based Administrator I want to be able to achieve all of the First Time Visitor, Returning Visitor and Registered User goals and also want to:   
+- Create, Read, Update and Delete the recipe Categories
+- Create, Read, Update and Delete Registered Users
+
+To ensure these goals are met, carry out the tests below
+
+- Manage Categories Page
+> 1. Go to the Home Page
+> 2. If you are not logged in then Log In as the admin (username: admin password: IamAdmin)
+> 3. The Manage Categories option should be visible in the Nav bar, click on it
+> 4. You should be able to see all the existing categories, click on Add New Category
+> 5. Enter the Category Name Test Category and click Add Category
+> 6. Check that the Test Category appears (near the bottom as it is sorted alphabetically)
+> 7. Click on the Edit Button next to it
+> 8. Change it to read A Test Category and click Update Category
+> 9. This category should now appear at or near the top
+> 10. Click on the Delete Category button next to it
+> 11. A Test Category should now disappear
+
+- Manage Users Page
+> 1. Click on the Manage Users option on the Nav bar (only visible if you are logged in as Admin)
+> 2. All users are listed with username, given name and family name.
+> 3. Next to the testuser click on Edit
+> 4. The admin user can change any of the fields that the user can change for their own profile, but for all users.  The admin can also change the username.
+> 5. Change the given name to Tested and check the list again to see that the change has been made
+> 6. Click on the Delete button next to testuser
+> 7. Check that the user has gone
+
+### Further Testing
 The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
 The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
 A large amount of testing was done to ensure that all pages were linking correctly.
 Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
-Known Bugs
-On some mobile devices the Hero Image pushes the size of screen out more than any of the other content on the page.
-A white gap can be seen to the right of the footer and navigation bar as a result.
-On Microsoft Edge and Internet Explorer Browsers, all links in Navbar are pushed upwards when hovering over them.
-## 7. Deployment
+
+### Known Bugs
+If the admin changes the username for a use who has created recipes the Python throws up errors due to the inconsistency of data across the tables.  This error became evident late in the testing and will need to be corrected in a future release.
+
+## 8. Deployment
+
+
 GitHub Pages
 The project was deployed to GitHub Pages using the following steps...
 
@@ -412,14 +539,14 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 > Unpacking objects: 100% (10/10), done.
 Click Here to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
-## 8 Data Structure
+## 9 Data Structure
 
-### 8.1 Entity Relationship Diagram  
+### 9.1 Entity Relationship Diagram  
 Entity Relationship Diagram  
 ![Entity Relationship Diagram](project_files/data_planning/erd.png)
 
 
-## 8. Credits
+## 10. Credits
 Code
 The full-screen hero image code came from this StackOverflow post
 
@@ -440,7 +567,7 @@ My Mentor for continuous helpful feedback.
 Tutor support at Code Institute for their support.
 
 
-## 9. Future Developments
+##1. Future Developments
 
 Updated deprecated functionality
 
@@ -457,3 +584,8 @@ REgistration date for users
 Some functions are still potentially vulnerable to URL interpolation.  
 
 Password change by user.
+
+Adjust CSS to allow Bootstrap CSS to be brought in line with the Bootstrap Javascript
+
+If the user submits with no image substitute in the URL for a generic avatar
+Search facility for users, may be needed as the numnber of users expands

@@ -9,7 +9,7 @@
         <form class="col s12" method="POST" action="{{ url_for('get_filtered_recipes') }}">
             <div class="row">
                 <div class="col-3 mpl-filter-label">
-                    <label for="category_name">Recipe Filter</label>
+                    <label for="category_filter">Recipe Filter</label>
                 </div>
                 <div class="col-6 mpl-filter-select">
                     <i class="fas fa-folder-open prefix text-darken-4"></i>
@@ -35,7 +35,7 @@
             <div class="row mpl-recipe-row">
             <div class="collapsible-header white-text darken-4 text-shadow mpl-collapsible-header">
                 <div class="col-12 col-lg-2 s3 mpl-recipe-col-a">
-                    <img class="mpl-recipe-image" src="{{recipe.recipe_image }}">
+                    <img class="mpl-recipe-image" src="{{recipe.recipe_image }}" alt="Recipe Image">
                     <div class="mpl-recipe-image-overlay">
                         <i class="fas fa-caret-down"></i>
                     </div>
@@ -53,7 +53,7 @@
                         <p>{{ recipe.recipe_description }}</p>
                     </div>
                     <div class="col-2  mpl-recipe-col-d" onmouseover="document.getElementById('mpl-recipe-profile-{{recipe._id}}').style.display='block';" onmouseout="document.getElementById('mpl-recipe-profile-{{recipe._id}}').style.display='none';">
-                        <img class="mpl-profile-thumbnail" src="{{ recipe.profile_image }}">
+                        <img class="mpl-profile-thumbnail" src="{{ recipe.profile_image }}" alt="profile image">
                     </div>
                     
                     

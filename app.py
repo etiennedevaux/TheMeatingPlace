@@ -200,7 +200,7 @@ def user_admin(user_id):
         mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
         flash("User Successfully Updated")
         data_refresh({"upload_date":{"$ne": None}})
-        users=mongo.db.users.find()
+        users=mongo.db.users.find().sort("username", 1)
         return render_template("users.html", users=users)
 
     useradmin=mongo.db.users.find_one({"_id": ObjectId(user_id)})      
