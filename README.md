@@ -195,27 +195,86 @@ The dropdown defaults to 'All', and returns to 'All' when a filter is applied - 
 
 ### 4.3 Register Page
 
+The Register Page serves the simple purpose of allowing new users to register an account.
 
+All fields are completed by the user typing, they then click the Register button that posts the content to the Flask App, which creates the relevant document in the MongoDB database.
 
+Once the registration is posted the user is given a confirmation in the Flash Message area and then logged in with their new credentials and directed to their personal profile page, which they can edit at any time.
 
+If the username already exists the user is given a message to that effect in the Flash Message area and then directed to a blank registration page.
 
-### Login Page
+### 4.4 Login Page
 
-### Profile Page
+The login page allows the user to enter their username and a hashed password.
 
-### Edit Profile Page
+Once logged in a Welcome message is shown in the Flash Messages area and the user is directed first to their Profile Page.
 
-### New Recipe Page
+### 4.5 Profile Page
 
-### Edit Recipe Page
+The profile page shows a user their own profile.  When profile is selected from the Navigation Bar the backend Python detects the username and renders the profile template, populated with the correct data.  
 
-### Manage Categories Page
+A user attempting to interpolate the URL may be successful, but will not be shown the edit button, so security will not be breached.  An unsuccessful attempt to interpolate, or accidental entry of a URL, will direct to the 404 page.
 
-### Edit Category Page
+### 4.6 Edit Profile Page
 
-### Manage Users Page
+The Edit Profile page takes the username from the environment,and will therefore only edit the profile for the logged in user.
+
+The editable fields of the user profile are displayed (username and password are not editable)
+
+### 4.7 New Recipe Page
+
+The New Recipe menu option appears only to logged in users.
+
+Recipe Categories are drawn the full Categories list, managed by the Admin account.  An entry is mandated.
+
+The rest of the fields are text entry with the Recipe Name and Recipe Description being mandated.
+
+### 4.8 Edit Recipe Page
+
+The edit recipe page allows the recipe owner to change any of the fields and submit an update.
+
+The owner can also delete a recipe
+
+Changes are confirmed via the Flash Messages window
+
+### 4.9 Manage Categories Page
+
+The manage categories page is only available to the admin user.
+
+Categories can be created, read, updated or deleted from here.
+
+All existing categories can be viewed on a single screen.
+
+### 4.10 Add New Category Page
+
+The new category is typed in, once posted the addition is confirmed in the Flash Messages window and the user returned to the Manage Categories Page
+
+### 4.11 Edit Category Page
+
+The page is prepopulated with the selected category.
+Changes are typed in, once posted the change is confirmed in the Flash Messages window and the user returned to the Manage Categories Page
+
+### 4.1.2 Manage Users Page
+
+The Manage Users page is only available to the admin user.
+
+All users are listed with username, given name and family name.
+
+Users can be edited or deleted.
 
 ### Edit User Page
+
+The Edit User page is only available to the admin user.
+
+username, given and first names, about me section and the profile image can be updated.
+
+Once submitted the action is confirmed and the user returned to the Manage Users Page.
+
+### Log Out
+
+When the log out option is selected the action is confirmed via the Flash Messages section
+
+The user is returned to the Login Page
 
 ## 5. Technologies Used
 
@@ -230,7 +289,8 @@ Flask
 
 Jinja
 
-Bootstrap 5.1.0:
+Bootstrap JS 5.1.0:
+Bootstrap CSS 4.1.3 (to avoid presentation issues due to change in use of relative position)
 Bootstrap was used to assist with the responsiveness and styling of the website.
 Font Awesome:
 Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
@@ -391,3 +451,9 @@ Extend search capabilities
 User Dashboard
 
 Recipe stories
+
+REgistration date for users
+
+Some functions are still potentially vulnerable to URL interpolation.  
+
+Password change by user.
