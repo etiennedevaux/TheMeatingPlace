@@ -689,6 +689,14 @@ Detailed instructions:
 Entity Relationship Diagram  
 ![Entity Relationship Diagram](project_files/data_planning/erd.png)
 
+## 10 Test Users
+
+- Username: admin Password: IamAdmin
+- Username: johnnie Password: IamJohnnie
+- Username: carys Password: IamCarys
+- Username: stephen Password: IamStephen
+- Username: mary Password: IamMary
+- Username: ffion Password: IamFfion
 
 ## 10. Credits
 Code

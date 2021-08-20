@@ -208,7 +208,8 @@ def user_admin(user_id):
             "family_name": request.form.get("family_name"),
             "given_name": request.form.get("given_name"),
             "about_me": request.form.get("about_me"),
-            "profile_image": request.form.get("profile_image")
+            "profile_image": request.form.get("profile_image"),
+            "password": useradmin["password"]
         }
         mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
         flash("User Successfully Updated")
