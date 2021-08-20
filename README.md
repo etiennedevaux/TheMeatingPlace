@@ -758,23 +758,31 @@ Other sources are credited and referenced in context.
 
 ## 11. Future Developments
 
-Updated deprecated functionality
+### 11.1 New Features
 
-Enhance security to prevent interpolation of URLs
+User Dashboard - to enable registered users to view the recipes they have added and relevant data in a single place.
 
-Extend search capabilities
+Recipe Comments and Stories - to enable registered users to share comments, stories and suggestions on other people's recipes.
+Updated deprecated functionality.
 
-User Dashboard
+Menu Functionality - functionality to allow for creation of recommended menus, composed of one or more site recipe.
 
-Recipe stories
+Admin Search - A search facility for users, may be needed as the numnber of users expands
 
-Registration date for users
+### 11.2 Enhancements
 
-Some functions are still potentially vulnerable to URL interpolation.  
+Enhance security to prevent interpolation of URLs - there are still some instances where an interpolated URL may allow users to view information they do not own.  This is not a serious issue with the currently stored information, but is necessary to build further functionality.
 
-Password change by user.
+Extend search capabilities - the search and filter capabilities are currently focused on menu types.  Additional searches and filters could be added.
 
-Adjust CSS to allow Bootstrap CSS to be brought in line with the Bootstrap Javascript
+Registration date for users - an additional field recording when a user was added or updated.
 
-If the user submits with no image substitute in the URL for a generic avatar
-Search facility for users, may be needed as the numnber of users expands
+Password change by user - allow users to change their own passwords.
+
+Database Query Optimisation - when querying the database the Python makes more database calls than would be necessary if those queries were opimised and more backend processing done to parse the query results.
+
+### 11.3 Bug and Feature Fixes
+
+CSS Updates - Adjust CSS to allow Bootstrap CSS to be brought in line with the Bootstrap Javascript version.
+
+Username Updates - Currently when a username is changed the recipes from that user become orphaned.  A routine is needed to identify all of that users recipes and make the same change to the Created_By field.
