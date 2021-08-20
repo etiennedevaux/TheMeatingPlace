@@ -509,13 +509,11 @@ To successfully run, share, develop and re-use this project the following compon
 
 - Visual Studio Code
 
-- GitHub Desktop
-
 - GitHub
 
-- Python
+- GitHub Desktop
 
-- Flask
+- Python with Flask
 
 - PYMongo
 
@@ -525,40 +523,165 @@ To successfully run, share, develop and re-use this project the following compon
 
 ### 8.2 Visual Studio Code
 
+Visual Studio Code is the preferred editor for all project files and provides an integrated terminal to deploy a local test instance of Python, Flask and PYMongo
 
+To download Visual Studio Code use the link below  
+[Visual Studio Code Source Link](https://code.visualstudio.com/)
 
-GitHub Pages
-The project was deployed to GitHub Pages using the following steps...
+For Setup Instructions, Getting Started and the User Guide Please refer to the link below  
+[Visual Studio Code Setup Overview and Detailed Instructions](https://code.visualstudio.com/docs/setup/setup-overview)
 
-Log in to GitHub and locate the GitHub Repository
-At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
-Alternatively Click Here for a GIF demonstrating the process starting from Step 2.
-Scroll down the Settings page until you locate the "GitHub Pages" Section.
-Under "Source", click the dropdown called "None" and select "Master Branch".
-The page will automatically refresh.
-Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
-Forking the GitHub Repository
-By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+### 8.3 GitHub
 
-Log in to GitHub and locate the GitHub Repository
-At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
-You should now have a copy of the original repository in your GitHub account.
-Making a Local Clone
-Log in to GitHub and locate the GitHub Repository
-Under the repository name, click "Clone or download".
-To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
-Open Git Bash
-Change the current working directory to the location where you want the cloned directory to be made.
-Type git clone, and then paste the URL you copied in Step 3.
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-Press Enter. Your local clone will be created.
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-> Cloning into `CI-Clone`...
-> remote: Counting objects: 10, done.
-> remote: Compressing objects: 100% (8/8), done.
-> remove: Total 10 (delta 1), reused 10 (delta 1)
-> Unpacking objects: 100% (10/10), done.
-Click Here to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+To collaborate and extend this project you will need a GitHub account.
+
+> 1. Go to the GitHub Home Page at [https://github.com](https://github.com)  
+> 2. Click on the [Sign-Up](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) option to create a new account
+> 3. Follow the onscreen instructions.
+
+Once you have successfully created your account you can install GitHub Desktop
+
+### 8.4 GitHub Desktop  
+
+- Installing GitHub Desktop
+> 1. GitHub Desktop can be accessed from http://desktop.github.com
+>
+> 2. Dowload the version for your local machine
+> 
+> 3. Run the installation program
+> 
+> 4. Run the GitHub Desktop program and sign-in to your GitHub account (to create a GitHub account go to http://www.github.com/join)
+
+- Clone the Repository
+
+> 1. Choose FILE then CLONE REPOSITORY
+> 
+> 2. Enter the URL https://github.com/etiennedevaux/TheMeatingPlace
+> 
+The repository will then be downloaded to your local machine in the directory shown in the CLONE REPOSITORY dialogue
+
+Files can be edited using your preferred editor, Visual Studio Code is recommended for this project, but any common editor will work.
+
+See the documentation at https://docs.github.com/en/desktop
+
+### 8.7 MongoDB
+
+The application requires a MongoDB NoSQL database.  The version of the App on Heroku accesses an existing MongoDB database, and has the security credentials configured.
+
+Obtaining this information is part of the deployment process for MongoDB.
+
+NB The env.py in early commits DOES NOT contain the current security credentials, this file needs to be created locally and added to the GitIgnore file so that it does not get committed to GitHub or any other public area.
+
+- Sign In to MongoDB
+
+> 1. For first time users go to the [MongoDB SignUp Page](https://account.mongodb.com/account/register) and create an account
+> 2. Go to the [MongoDB home page](https://www.mongodb.com/) and sign in
+> 3. Create a Cluster (we recommend a free Sandbox cluster)
+> 4. Create a database named *cookery_book*
+> 5. Create collections within *cooker_book* in accordance with the data diagram below  
+> ![Data Diagram](project_files/data_planning/erd.png)
+> 6. Under DatabaseAccess create a new user, you will need the username and password in the env.py file
+> - [Sample env.py file](./project_files/env_sample.py)
+> 7. Navigate to the Access Manager page for your organization. ¶ ...
+> - Click Create API Key.
+> - Enter the API Key Information
+> - Click Next
+> - Copy and save the Public Key
+> - Copy and save the Private Key 
+> - Add an API Access List Entry
+> - Click Done
+> 8. Enter the API key in your env.py file
+
+### 8.6 Python, Flask and PyMongo
+
+The following pages show you how to create a Python Flask Environment on your local machine
+
+- [https://code.visualstudio.com/docs/python/tutorial-flask](https://code.visualstudio.com/docs/python/tutorial-flask)
+
+> 1. In particular you will need to ensure that you meet the [Prerequisites](https://code.visualstudio.com/docs/python/tutorial-flask#_prerequisites)
+> 2. And that you have created a [Project Environment](https://code.visualstudio.com/docs/python/tutorial-flask#_create-a-project-environment-for-the-flask-tutorial) that you can access from the Visual Studio Code command line terminal  
+
+- Running the Code
+
+By default on a PC the repository will be created at c:\GitHub\TheMeatingPlace, other directories can be chosen and the directory structure will be different on other operating systems
+
+> 1. In Visual Studio Code select File then Open Folder and navigate to the repository directory
+> 2. All files should be visible within the file structure, and all code and text files can be edited with the built-in Visual Studio Code editor
+> 3. From the Visual Studio Code menu, select Terminal then New Terminal
+> 4. Ensure that the terminal is a command prompt terminal, and type .\env\Scripts\Activate
+> 5. You should now see '(env)' - or an equivalent environment name - to the left of the cursor, indicating that you are in a Python terminal
+> 6. You will now need to install PyMongo (if you have not already), to do this type: **pip3 install pymongo**
+> -  ![PyMongo Installation](./project_files/pymongo.png)
+> -  For full instructions please refer to [Setting Up Your PyMongo Environment](https://www.mongodb.com/blog/post/pymongo-monday-setting-up-your-pymongo-environment)
+> 7. Type App to run the Flask application
+> 8. You should now be prompted with a URL (probably  http://192.168.0.7:5000/ or similar, depending on your local configuration ) to click
+> 9. The Flask app will now run in your local browser
+
+NB: Connections to the MongoDB database rely on information stored in the env.py file or the environment variables on the Heroku app.  Information on how to create and obtain these is in the deployment instructions for MongoDB.  If you wish to collaborate on the same MongoDB database as the author then please email Stephen.J.Clarke@hotmail.co.uk
+
+- Editing the Code
+> CSS, Javascript and site images are accessed by relative paths and are stored within the static folder. Some resources are drawn from third-party locations.
+> The main Python app.py file is stored on the root folder, which is at c:\GitHub\TheMeatingPlace if using GitHub Desktop on a PC with the default folder setttings.
+> The html templates are stored in the directory templates
+> The README.md file is also stored in the root and can be edited with the same set of tools.
+> The README.md file is written using the Markdown language, focused on GitHub deployment.
+> Visual Studio Code includes a previews for the many of the common file types, including the Markdown for the README.md file
+
+- Commits
+> Frequent commits have been made, all are labelled with at least a summary. Most major commits also have a description.
+> Commits are made both to update code, creating stable and re-usable versions, and to test that code working successfully as a local html file will work in the same way when viewed from the GitHub pages server.
+> All major functional areas are committed once completed and tested.
+
+- Push to Origin  
+> Frequent pushes to origin from GitHub desktop are important, as this ensures:
+> - That committed code is stored in more than one place, ie on the desktop and in the cloud
+> - That committed code is available to viewers, reviewers and collaborators using GitHub
+> - If future issues occur then an audit trail back to a stable and working version of individual functions is available
+
+- GitHub Branches
+> Once tested the code is deployed on GitHub, using Github Desktop.  
+> The code can be deployed to various branches to allow for testing and staging of changes and additions, whilst maintaining the integrity of the core.
+
+- Github Main Branch
+> The deployment goal at this stage is to be available for assessment on the Github platform.  
+> Once tested locally it can then be deployed to a branch on GitHub, and when tested in that environment merged back into the main branch and left unchanged for assessment.
+> Currently the latest version is on the Main branch.
+
+- Forking the GitHub Repository
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps:
+> 1. Log in to GitHub and locate the GitHub Repository
+> 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+> 3. You should now have a copy of the original repository in your GitHub account.
+
+### 8.7 Heroku
+
+Either upload env.py or use the Heroku environment variables, config vars
+
+To deploy the app in a public, cloud-based environment Keroku is recommended.
+
+The process overview is
+- Create an app
+- Configure the Environment
+- Connect to GitHub
+- Deploy the latest version
+- Open the App
+
+Detailed instructions:
+
+- Sign into Heroku
+> 1. To create a new account go to [Heroku SignUp Page](https://signup.heroku.com/login)
+> 2. Sign in to [Heroku](https://id.heroku.com/login)
+> 3. Click New then New App and name the app
+> 4. Click on the App to open the configuration page
+> 5. Go Reveal Config Variables and enter the variables from env.py
+> 6. Add the Heroku/Python buildpack
+> 7. Navigate to the Deploy section
+> 8. Select GitHub as the deployment method, ensuring that you navigate to the correct repository
+> 9. Select Connect
+> 10. Go to Manual Deploy
+> 11. Select the desired branch, default of Main
+> 12. Click on Deploy Branch
+> 13. Once the deployment is complete Click on Open App
 
 ## 9 Data Structure
 
