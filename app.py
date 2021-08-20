@@ -25,10 +25,23 @@ def data_refresh(flter):
     recipes = list(mongo.db.recipes.find(flter).sort("upload_date", -1))
    
     for recipe in recipes:
-        recipe['family_name'] = mongo.db.users.find_one({"username": recipe["created_by"]})["family_name"]
-        recipe['given_name'] = mongo.db.users.find_one({"username": recipe["created_by"]})["given_name"]
-        recipe['profile_image'] = mongo.db.users.find_one({"username": recipe["created_by"]})["profile_image"]
-        recipe['about_me'] = mongo.db.users.find_one({"username": recipe["created_by"]})["about_me"]
+        try: 
+            recipe['family_name'] = mongo.db.users.find_one({"username": recipe["created_by"]})["family_name"]
+        except:
+            recipe['family_name'] = "Unknown"
+        try:
+            recipe['given_name'] = mongo.db.users.find_one({"username": recipe["created_by"]})["given_name"]
+        except:
+            recipe['given_name'] = "User"
+        try:
+            recipe['profile_image'] = mongo.db.users.find_one({"username": recipe["created_by"]})["profile_image"]
+        except:
+            recipe['profile_image'] = "../static/images/avatar.jpg"
+        try: 
+            recipe['about_me'] = mongo.db.users.find_one({"username": recipe["created_by"]})["about_me"]
+        except:
+            recipe['about_me'] ="No Description"
+
  
 # https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
 @app.errorhandler(404)
@@ -191,6 +204,7 @@ def user_admin(user_id):
     useradmin=mongo.db.users.find_one({"_id": ObjectId(user_id)}) 
     if request.method == "POST":
         submit = {
+            "username": request.form.get("username").lower(),
             "family_name": request.form.get("family_name"),
             "given_name": request.form.get("given_name"),
             "about_me": request.form.get("about_me"),

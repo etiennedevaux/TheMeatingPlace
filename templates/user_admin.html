@@ -8,13 +8,12 @@
     <!-- Start of Username -->
     <div class="row">
         <div class="input-field col s12 mpl-readonly">
-            <i class="fas fa-lock prefix text-darken-4"></i>
-            <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required value="{{ useradmin.username }}" readonly>
+            <i class="fas fa-user-edit prefix text-darken-4"></i>
+            <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required value="{{ useradmin.username }}">
             <label for="username">Username</label>
         </div>
     </div>
     <!-- End of Username -->
-
       
     <div class="row">
         <!-- Given Name -->
@@ -33,8 +32,7 @@
         <!-- End of Family Name -->
     </div>
     <!-- End of Name -->
-
-               
+             
     <!-- Start of About Me-->
     <div class="row">
         <div class="input-field col s12">
