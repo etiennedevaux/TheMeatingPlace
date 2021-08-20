@@ -195,9 +195,6 @@ nav{
 
 /* End of Navigation */
 
-/* Start of Login*/
-/* End of Login */
-
 /* Start of Users Page*/
 
 .mpl-users-username{
@@ -210,7 +207,6 @@ nav{
     font-weight: 300;
     padding-left: 5%;
 }
-
 
 /* End of Users Page */
 
@@ -340,9 +336,11 @@ nav{
 .fa-trash-alt {
     color: #fff;
 }
+
 /* End of Edit Recipe */
 
 /* Recipes */
+
 .mpl-recipe-row {
     margin-bottom: 0;
 }
@@ -385,10 +383,6 @@ nav{
     font-weight:500;
     text-shadow: 2px 2px #0000ff;
     letter-spacing: 2px;
-}
-
-.mpl-recipe-col-c {
-    
 }
 
 .mpl-recipe-col-d {
@@ -477,8 +471,6 @@ nav{
 
 /* End of Recipes */
 
-
-
 /* Start of Categories */
 
 .mpl-categories-actions a {
@@ -507,18 +499,12 @@ nav{
       margin: 0;
  }
 
-.mpl-categories-actions {
-   
-}
-
 .mpl-categories-button {
     background-color:#461b22;
-   
 }
 
 .mpl-categories-button i {
     color: #fff;
-   
 }
 
 /* End of Categories */
@@ -543,7 +529,7 @@ nav{
 }
 /* End of Error Handling */
 
-  /* Animation for the front page call to action. */
+/* Animation for the front page call to action. */
   @keyframes flash-item{
     from{
         transform: scale(0.1);
@@ -559,25 +545,18 @@ nav{
       }
     }
 
+/*MEDIA QUERIES FOR RESPONSIVE DESIGN*/
 
-    /*MEDIA QUERIES FOR ACCESSIBILITY*/
-  /* For extra-wide 4k screens */
-  @media screen and (min-width: 2400px){
-    
-}
 /* Equivalent to Bootstrap Extra Extra Large */
 @media screen and (min-width: 2000px){
-  
 }
 
 /* Equivalent to Bootstrap Extra Large */
 @media screen and (max-width: 1999px){
-  
 }
 
 /* Equivalent to Bootstrap Large */
 @media screen and (max-width: 1199px){
- 
 }
 
 /* Equivalent to Bootstrap Medium */

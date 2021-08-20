@@ -1,22 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="mpl-admin-card">
-
     <h1>Manage Users</h1>
-
     <div class="row">
-
     </div>
-
     <ul class="mpl-categories">
-
         {% for user in users %}
         <li>
-
-
             <div class="row mpl-categories-row">
-
                 <div class="col-6 mpl-categories-text">
                     <p class="mpl-users-username">{{ user.username }}</p>
                     <p class="mpl-users-user">({{ user.given_name }} {{ user.family_name }})</p>
@@ -29,14 +20,8 @@
                     <a href="{{ url_for('delete_user', user_id=user._id) }}" class="btn lighten-1 mpl-delete">Delete   <i class="far fa-trash-alt"></i></a>
                 </div>
             </div>
-
-
         </li>
-
         {% endfor %}
-
     </ul>
-    
-</div>
-
+ </div>
 {% endblock %}

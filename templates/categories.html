@@ -1,22 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="mpl-admin-card">
-
     <h1>Manage Categories</h1>
-
     <div class="row">
-
     </div>
-
     <ul class="mpl-categories">
-
         {% for category in categories %}
         <li>
-
-
             <div class="row mpl-categories-row">
-
                 <div class="col-6 mpl-categories-text">
                     <p>{{ category.category_name }}</p>
                 </div>
@@ -27,17 +18,12 @@
                     <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn lighten-1 mpl-delete">Delete <i class="far fa-trash-alt"></i></a>
                 </div>
             </div>
-
-
         </li>
-
         {% endfor %}
-
     </ul>
     <div class="col s12 center-align">
         <a href="{{ url_for('add_category') }}" class="btn-large darken-2 text-shadow mpl-add">Add New Category <i class="fas fa-plus-square right"></i>
         </a>
     </div>
 </div>
-
 {% endblock %}

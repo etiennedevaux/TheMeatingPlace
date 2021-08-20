@@ -1,12 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-    
-    <div class="row mpl-card grey lighten-5">
+     <div class="row mpl-card grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('edit_user', user_id=userprofile._id) }}">
             <h1>Edit User Profile</h1>
                       
     <!-- Start of Name -->
-
     <div class="row">
         <!-- Given Name -->
         <div class="input-field col-6">
@@ -24,7 +22,6 @@
         <!-- End of Family Name -->
     </div>
     <!-- End of Name -->
-
                
     <!-- Start of About Me-->
     <div class="row">
@@ -66,6 +63,4 @@
             </div>
         </form>
     </div>
-    
-
 {% endblock %}

@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-    
     <div class="row mpl-card grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('user_admin', user_id=useradmin._id) }}">
             <h1>Edit User</h1>
@@ -73,6 +72,4 @@
             </div>
         </form>
     </div>
-    
-
-{% endblock %}
+ {% endblock %}
