@@ -7,10 +7,9 @@
                       
     <!-- Start of Username -->
     <div class="row">
-        <div class="input-field col s12">
-            <i class="fas fa-user-plus prefix text-darken-4"></i>
-            <input id="username" name="username" type="text" minlength="5"
-                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required value="{{ useradmin.username }}">
+        <div class="input-field col s12 mpl-readonly">
+            <i class="fas fa-lock prefix text-darken-4"></i>
+            <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required value="{{ useradmin.username }}" readonly>
             <label for="username">Username</label>
         </div>
     </div>

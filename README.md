@@ -141,17 +141,14 @@ Mobile
 ![Mobile](project_files/wireframes/edit_user_page_mobile.png)
 
 ## 4. Features
-Responsive design, ensuring a high-quality user experience on all device sizes.
+Responsive design, ensuring a high-quality user experience on all device sizes.  
 
 Consistent design of user controls across the site.
 
 Defaults to a well designed 404 page, providing user feedback if a URL does not exist and on errors where a find query returns no results.
 
-
-
-The search filter is a drop down, select box, which is only populated with categories that have been associated with a menu
-Testing
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+The search filter is a drop down, select box, which is only populated with categories that have been associated with a menu.  
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.  
 
 ### 4.1 Navigation Bar and Background Image  
 
@@ -296,7 +293,8 @@ Bootstrap CSS 4.1.3 (to avoid presentation issues due to change in use of relati
 Font Awesome:  
 - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.  
 Materialize 1.0.0  
-- Used to assist with the responsiveness  
+- Used to assist with the responsiveness and form design, particularly around validation and formatting.  
+
 jQuery 3.5.1:  
 
 Git
@@ -504,6 +502,29 @@ Friends and family members were asked to review the site and documentation to po
 If the admin changes the username for a use who has created recipes the Python throws up errors due to the inconsistency of data across the tables.  This error became evident late in the testing and will need to be corrected in a future release.
 
 ## 8. Deployment
+
+### 8.1 Deployment Overview
+
+To successfully run, share, develop and re-use this project the following components have to be deployed
+
+- Visual Studio Code
+
+- GitHub Desktop
+
+- GitHub
+
+- Python
+
+- Flask
+
+- PYMongo
+
+- MongoDB
+
+- HEROKU
+
+### 8.2 Visual Studio Code
+
 
 
 GitHub Pages

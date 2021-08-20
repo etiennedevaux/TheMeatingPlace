@@ -191,7 +191,6 @@ def user_admin(user_id):
     useradmin=mongo.db.users.find_one({"_id": ObjectId(user_id)}) 
     if request.method == "POST":
         submit = {
-            "username": request.form.get("username").lower(),
             "family_name": request.form.get("family_name"),
             "given_name": request.form.get("given_name"),
             "about_me": request.form.get("about_me"),

@@ -161,6 +161,10 @@ body {
     display: block;
 }
 
+.mpl-readonly {
+    border: #ffffff00;
+}
+
 /* End of Global Characteristics */
 
 /* Start of Navigation */
