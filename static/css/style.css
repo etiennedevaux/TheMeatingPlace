@@ -78,6 +78,7 @@
     padding: 5px;
     margin: 2% auto;
     border-radius: 5px;
+    width: 100%;
 }
 
 .prefix{
@@ -176,7 +177,7 @@ nav{
     letter-spacing: 5px;
     text-shadow: 5px 3px #461b22;
     text-decoration: wavy;
-    font-size: 150%;
+    font-size: 130%;
     margin-left: 20px;
     color: #ffffffdd;
 }
@@ -405,7 +406,7 @@ nav{
     align-content: center;
     margin: auto;
     max-height: 120px;
-    max-width: 400px;    
+    max-width: 200px;    
 }
 
 .mpl-recipe-image-overlay {
@@ -618,7 +619,9 @@ nav{
     }
 }
 
-/* Large vertical breakpoint */
-@media screen and (max-height: 850px){
-
+/* Additional breakpoint */
+@media screen and (max-width: 1400px){
+ .mpl-nav-heading {
+     font-size: 100%;
+ }
 }

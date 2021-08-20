@@ -492,14 +492,38 @@ To ensure these goals are met, carry out the tests below
 > 6. Click on the Delete button next to testuser
 > 7. Check that the user has gone
 
+### Responsive Design
+
+The design is responsive, focusing on the key devices of a desktop, tablet and phone.
+
+As the size changes font sizes are adjsuted, text may be shorted (such as the site title), and columns change to rows when necessary.
+
+This can be seen in practice with the following video walkthrough
+- [Video Walkthrough for Responsive Design](https://youtu.be/ELCGVGcGZw0)
+
+To test this functionality:
+
+> 1. Load the Site in Google Chrome
+> 2. Right-Click on any part of the screen and select 'Inspect'
+> 3. Along the top should be options for different devices (including Responsive which is the default)
+> 4. When in responsive mode, shring and enlarge the screen to check how the site responds dynamically
+> 5. Select a Tablet view
+> 6. View the Tablet in Landscape
+> 7. View the Tablet in Portrait 
+> 8. Select a Phone View
+
+For the different devices note how fonts, layout, text and other forms of content adapt.
+
+
 ### Further Testing
 The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
 The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
 A large amount of testing was done to ensure that all pages were linking correctly.
 Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
+
 ### Known Bugs
-If the admin changes the username for a use who has created recipes the Python throws up errors due to the inconsistency of data across the tables.  This error became evident late in the testing and will need to be corrected in a future release.
+If the admin changes the username for a use who has created recipes the Python throws up errors due to the inconsistency of data across the tables.  This error became evident late in the testing and will need to be corrected in a future release.  To ensure a graceful response the Python code has been changed to substitute default values when this occurs.
 
 ## 8. Deployment
 
@@ -699,27 +723,40 @@ Entity Relationship Diagram
 - Username: ffion Password: IamFfion
 
 ## 10. Credits
-Code
-The full-screen hero image code came from this StackOverflow post
+
+Technical References
 
 Bootstrap4: Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
-MDN Web Docs : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found Here
+Stackoverflow: https://stackoverflow.com/ for constant references, especially on Python code and css
 
 Content
-All content was written by the developer.
+The outline for the application was taken from the Code Institute Python Essentials, Backend Development Mini Project, and has been extensively extended and re-written
 
-Psychological properties of colours text in the README.md was found here
+All other content was written by the developer.
 
 Media
-All Images were created by the developer.
+All Images were created by the developer or are links to open web resources covered by 'fair dealing.'
+
 Acknowledgements
-My Mentor for continuous helpful feedback.
+
+> [The Code Institute](https://codeinstitute.net/)
+> [Bootstrap](https://getbootstrap.com/)
+> [FontAwesome](https://fontawesome.com/)
+> [World Wide Web Consortium](https://www.w3.org/)
+> [W3schools](https://www.w3schools.com/)
+> [Stack Overflow](https://stackoverflow.com/)
+> [GitHub](https://github.com/)
+> [Heroku](https://id.heroku.com/login)
+> [MongoDB](https://www.mongodb.com/)
+
+My Mentor for helpful feedback.
 
 Tutor support at Code Institute for their support.
 
+Other sources are credited and referenced in context.
 
-##1. Future Developments
+## 11. Future Developments
 
 Updated deprecated functionality
 
@@ -731,7 +768,7 @@ User Dashboard
 
 Recipe stories
 
-REgistration date for users
+Registration date for users
 
 Some functions are still potentially vulnerable to URL interpolation.  
 
