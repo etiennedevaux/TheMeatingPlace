@@ -290,8 +290,10 @@ Jinja
 Bootstrap JS 5.1.0:  
 Bootstrap CSS 4.1.3 (to avoid presentation issues due to change in use of relative position)  
 - Bootstrap was used to assist with the responsiveness and styling of the website.  
+
 Font Awesome:  
 - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.  
+
 Materialize 1.0.0  
 - Used to assist with the responsiveness and form design, particularly around validation and formatting.  
 
@@ -299,11 +301,14 @@ jQuery 3.5.1:
 
 Git
 - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+
 GitHub
 - GitHub is used to store the projects code after being pushed from Git.
+
 Microsoft Photo Editor
-- Photo Editor resizing images and editing photos for the website.
-Pencil:
+- Photo Editor resizing images and editing photos for the website.  
+
+Pencil
 - Pencil was used to create the wireframes during the design process.
 
 Visual Studio Code
@@ -315,8 +320,6 @@ Mongo DB
 
 Heroku
 - Used as the cloud platform to run Python and Flask, with connectivity to MongoDB for web-based access
-
-
 
 
 ## 6 Validator Results
@@ -715,7 +718,7 @@ Entity Relationship Diagram
 
 ## 10 Test Users
 
-- Username: admin Password: IamAdmin
+- The Admin user is supplied via the project submission form
 - Username: johnnie Password: IamJohnnie
 - Username: carys Password: IamCarys
 - Username: stephen Password: IamStephen
@@ -726,17 +729,17 @@ Entity Relationship Diagram
 
 Technical References
 
-Bootstrap4: Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+- Bootstrap4: Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
-Stackoverflow: https://stackoverflow.com/ for constant references, especially on Python code and css
+- Stackoverflow: https://stackoverflow.com/ for constant references, especially on Python code and css
 
-Content
-The outline for the application was taken from the Code Institute Python Essentials, Backend Development Mini Project, and has been extensively extended and re-written
+Content   
+- The outline for the application was taken from the Code Institute Python Essentials, Backend Development Mini Project, and has been extensively extended and re-written
 
-All other content was written by the developer.
+- All other content was written by the developer.
 
 Media
-All Images were created by the developer or are links to open web resources covered by 'fair dealing.'
+- All Images were created by the developer or are links to open web resources covered by 'fair dealing.'
 
 Acknowledgements
 
@@ -760,29 +763,31 @@ Other sources are credited and referenced in context.
 
 ### 11.1 New Features
 
-User Dashboard - to enable registered users to view the recipes they have added and relevant data in a single place.
+- User Dashboard - to enable registered users to view the recipes they have added and relevant data in a single place.
 
-Recipe Comments and Stories - to enable registered users to share comments, stories and suggestions on other people's recipes.
+- Recipe Comments and Stories - to enable registered users to share comments, stories and suggestions on other people's recipes.
 Updated deprecated functionality.
 
-Menu Functionality - functionality to allow for creation of recommended menus, composed of one or more site recipe.
+- Menu Functionality - functionality to allow for creation of recommended menus, composed of one or more site recipe.
 
-Admin Search - A search facility for users, may be needed as the numnber of users expands
+- Admin Search - A search facility for users, may be needed as the numnber of users expands
 
 ### 11.2 Enhancements
 
-Enhance security to prevent interpolation of URLs - there are still some instances where an interpolated URL may allow users to view information they do not own.  This is not a serious issue with the currently stored information, but is necessary to build further functionality.
+- Enhance security to prevent interpolation of URLs - there are still some instances where an interpolated URL may allow users to view information they do not own.  This is not a serious issue with the currently stored information, but is necessary to build further functionality.
 
-Extend search capabilities - the search and filter capabilities are currently focused on menu types.  Additional searches and filters could be added.
+- Extend search capabilities - the search and filter capabilities are currently focused on menu types.  Additional searches and filters could be added.
 
-Registration date for users - an additional field recording when a user was added or updated.
+- Registration date for users - an additional field recording when a user was added or updated.
 
-Password change by user - allow users to change their own passwords.
+- Password change by user - allow users to change their own passwords.
 
-Database Query Optimisation - when querying the database the Python makes more database calls than would be necessary if those queries were opimised and more backend processing done to parse the query results.
+- Database Query Optimisation - when querying the database the Python makes more database calls than would be necessary if those queries were opimised and more backend processing done to parse the query results.
+
+- Image Upload - at present images are provided via a URL.  This can refer to an image on The Meating Place site or elsewhere, such as a social media profile.  It would be good to allow users to upload an image.
 
 ### 11.3 Bug and Feature Fixes
 
-CSS Updates - Adjust CSS to allow Bootstrap CSS to be brought in line with the Bootstrap Javascript version.
+- CSS Updates - Adjust CSS to allow Bootstrap CSS to be brought in line with the Bootstrap Javascript version.
 
-Username Updates - Currently when a username is changed the recipes from that user become orphaned.  A routine is needed to identify all of that users recipes and make the same change to the Created_By field.
+- Username Updates for Recipes - Currently when a username is changed the recipes from that user become orphaned.  A routine is needed to identify all of that users recipes and make the same change to the Created_By field.
